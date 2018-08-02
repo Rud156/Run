@@ -174,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257316299
 GameObject:
@@ -191,7 +191,6 @@ GameObject:
   - component: {fileID: 257316307}
   - component: {fileID: 257316305}
   - component: {fileID: 257316304}
-  - component: {fileID: 257316308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -323,26 +322,6 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 1
   m_AffectedAgents: ffffffff
---- !u!114 &257316308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 257316299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb9c158cc958ba49b7227114cb54930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashDistance: 10
-  dashTrail: {fileID: 1953457148725350, guid: 400779d3e8ee67741a3e246497951936, type: 2}
-  dashBody: {fileID: 1493331595083046, guid: 99a4046d15c6e0444b16c601ae25e9b3, type: 2}
-  waitForTotalFrames: 120
-  dashSlider: {fileID: 919873583}
-  dashFiller: {fileID: 1729235953}
-  minWaitColor: {r: 1, g: 0, b: 0, a: 1}
-  halfWaitColor: {r: 0.07586192, g: 0, b: 1, a: 1}
-  maxWaitColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &413573387
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +458,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &529786765 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1457299903882636, guid: 3b94e56c320c0a94ab8944751c1fec17,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336161755}
 --- !u!4 &529786768 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4184508750493870, guid: 3b94e56c320c0a94ab8944751c1fec17,
@@ -576,6 +560,7 @@ GameObject:
   - component: {fileID: 803576281}
   - component: {fileID: 803576280}
   - component: {fileID: 803576279}
+  - component: {fileID: 803576282}
   m_Layer: 5
   m_Name: Left Button
   m_TagString: Untagged
@@ -594,12 +579,12 @@ RectTransform:
   m_LocalScale: {x: 1.0000019, y: 1.0000019, z: 1.0000019}
   m_Children: []
   m_Father: {fileID: 1471993063}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 333.55, y: 0}
-  m_SizeDelta: {x: 667.1, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.049987793, y: 0}
+  m_SizeDelta: {x: 0.099975586, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &803576279
 MonoBehaviour:
@@ -675,6 +660,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 803576277}
+--- !u!114 &803576282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803576277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a64cb1ce8b95d7459593ea19825fb55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &807708791
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +682,7 @@ GameObject:
   - component: {fileID: 807708795}
   - component: {fileID: 807708794}
   - component: {fileID: 807708793}
+  - component: {fileID: 807708796}
   m_Layer: 5
   m_Name: Right Button
   m_TagString: Untagged
@@ -704,12 +701,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1471993063}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -333.55, y: 0}
-  m_SizeDelta: {x: 667.1, y: 0}
+  m_AnchoredPosition: {x: -0.049987793, y: 0}
+  m_SizeDelta: {x: 0.099975586, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &807708793
 MonoBehaviour:
@@ -749,7 +746,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 807708794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 529786765}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &807708794
@@ -785,6 +793,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 807708791}
+--- !u!114 &807708796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 807708791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4888597520bdfac4caeb3b72d04f547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &850613886
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &970592534
 MonoBehaviour:
@@ -1113,6 +1132,7 @@ GameObject:
   - component: {fileID: 1261294754}
   - component: {fileID: 1261294753}
   - component: {fileID: 1261294752}
+  - component: {fileID: 1261294755}
   m_Layer: 5
   m_Name: Dash
   m_TagString: Untagged
@@ -1177,7 +1197,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1261294753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1261294755}
+        m_MethodName: CheckAndDashPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1261294753
@@ -1213,6 +1244,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261294750}
+--- !u!114 &1261294755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261294750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb9c158cc958ba49b7227114cb54930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 257316299}
+  dashDistance: 10
+  dashTrail: {fileID: 1953457148725350, guid: 400779d3e8ee67741a3e246497951936, type: 2}
+  dashBody: {fileID: 1493331595083046, guid: 99a4046d15c6e0444b16c601ae25e9b3, type: 2}
+  waitForTotalFrames: 120
+  dashSlider: {fileID: 919873583}
+  dashFiller: {fileID: 1729235953}
+  minWaitColor: {r: 1, g: 0, b: 0, a: 1}
+  halfWaitColor: {r: 0.07586192, g: 0, b: 1, a: 1}
+  maxWaitColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1293587180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,12 +1551,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 807708792}
   - {fileID: 803576278}
+  - {fileID: 807708792}
   - {fileID: 1261294751}
   - {fileID: 1097732204}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1543,7 +1595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.000094414136, y: 0}
+  m_AnchoredPosition: {x: 0.000091552734, y: 0}
   m_SizeDelta: {x: -0.000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729235953

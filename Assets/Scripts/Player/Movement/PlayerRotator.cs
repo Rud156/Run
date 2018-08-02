@@ -18,7 +18,17 @@ public class PlayerRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxis(ControlsInput.Horizontal);
+        // float moveX = Input.GetAxis(ControlsInput.Horizontal);
+
+        float moveX;
+
+        if (PlayerData.leftButtonPressed && !PlayerData.rightButtonPressed)
+            moveX = -1;
+        else if (PlayerData.rightButtonPressed && !PlayerData.leftButtonPressed)
+            moveX = 1;
+        else
+            moveX = 0;
+
         PlayerData.yaw += moveX * rotationSpeed * Time.deltaTime;
         gameObject.transform.eulerAngles = Vector3.up * PlayerData.yaw;
     }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerDash : MonoBehaviour
 {
+    public GameObject player;
+
     [Header("Dash Stats")]
     public float dashDistance = 10;
     public GameObject dashTrail;
@@ -36,8 +38,8 @@ public class PlayerDash : MonoBehaviour
         if (currentFrameCount < waitForTotalFrames)
             currentFrameCount += 1;
 
-        if (Input.GetKeyDown(KeyCode.Q) && currentFrameCount >= waitForTotalFrames)
-            DashPlayer();
+        if (Input.GetKeyDown(KeyCode.Q))
+            CheckAndDashPlayer();
 
         int maxWaitTime = waitForTotalFrames;
         int currentWaitTime = currentFrameCount;
@@ -50,24 +52,30 @@ public class PlayerDash : MonoBehaviour
         dashSlider.value = waitRatio;
     }
 
+    public void CheckAndDashPlayer()
+    {
+        if (currentFrameCount >= waitForTotalFrames)
+            DashPlayer();
+    }
+
     void DashPlayer()
     {
         RaycastHit hit;
-        Vector3 destination = gameObject.transform.position +
-            gameObject.transform.forward * dashDistance;
+        Vector3 destination = player.transform.position +
+            player.transform.forward * dashDistance;
 
         // Obstacle is in Front
-        if (Physics.Linecast(gameObject.transform.position, destination, out hit))
-            destination = gameObject.transform.position +
-                gameObject.transform.forward * (hit.distance - 1);
+        if (Physics.Linecast(player.transform.position, destination, out hit))
+            destination = player.transform.position +
+                player.transform.forward * (hit.distance - 1);
 
-        gameObject.transform.position = destination;
-        Instantiate(dashTrail, gameObject.transform.position,
-            gameObject.transform.rotation);
+        player.transform.position = destination;
+        Instantiate(dashTrail, player.transform.position,
+            player.transform.rotation);
 
         Instantiate(dashBody,
-            new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.8f,
-                gameObject.transform.position.z),
+            new Vector3(player.transform.position.x, player.transform.position.y - 0.8f,
+                player.transform.position.z),
             dashBody.transform.rotation);
 
         currentFrameCount = 0;
