@@ -18,8 +18,17 @@ public class EnemySpawner : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        coroutine = StartCoroutine(SpawnEnemy());
+        StartSpawn();
+    }
 
+    public void StartSpawn()
+    {
+        coroutine = StartCoroutine(SpawnEnemy());
+    }
+
+    public void StopSpawn()
+    {
+        StopCoroutine(coroutine);
     }
 
     IEnumerator SpawnEnemy()
