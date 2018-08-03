@@ -9,6 +9,7 @@ public class FrontEnemySpawner : MonoBehaviour
     public float minSpawnTime;
     public float maxSpawnTime;
     public GameObject spawnPoint;
+    public GameObject spawnEffect;
 
     private Coroutine coroutine;
 
@@ -33,6 +34,9 @@ public class FrontEnemySpawner : MonoBehaviour
         while (true)
         {
             Vector3 position = spawnPoint.transform.position;
+
+            Instantiate(spawnEffect, new Vector3(position.x, 1, position.z),
+                spawnEffect.transform.rotation);
             Instantiate(enemy, position, enemy.transform.rotation);
 
             float spawnTime = Random.Range(minSpawnTime, maxSpawnTime);

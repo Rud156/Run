@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public BoxCollider enclosingBoxCollider;
     public GameObject enemy;
     public float spawnTime;
+    public GameObject spawnEffect;
 
     [Header("Player Data")]
     public GameObject player;
@@ -50,6 +51,8 @@ public class EnemySpawner : MonoBehaviour
                 continue;
             }
 
+            Instantiate(spawnEffect, new Vector3(randomPoint.x, 1, randomPoint.z),
+                spawnEffect.transform.rotation);
             Instantiate(enemy, randomPoint, enemy.transform.rotation);
             yield return new WaitForSeconds(spawnTime);
         }
