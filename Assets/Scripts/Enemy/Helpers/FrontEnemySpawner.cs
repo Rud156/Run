@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FrontEnemySpawner : MonoBehaviour
 {
+    public GameObject enemyHolder;
+
     [Header("Spawner Data")]
     public GameObject enemy;
     public float minSpawnTime;
@@ -31,7 +33,8 @@ public class FrontEnemySpawner : MonoBehaviour
 
             Instantiate(spawnEffect, new Vector3(position.x, 1, position.z),
                 spawnEffect.transform.rotation);
-            Instantiate(enemy, position, enemy.transform.rotation);
+            GameObject enemyInstance = Instantiate(enemy, position, enemy.transform.rotation);
+            enemyInstance.transform.SetParent(enemyHolder.transform);
 
             float spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(spawnTime);

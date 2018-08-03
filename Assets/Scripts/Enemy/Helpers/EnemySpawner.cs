@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public GameObject enemyHolder;
+
     [Header("Spawner Data")]
     public BoxCollider enclosingBoxCollider;
     public GameObject enemy;
@@ -47,7 +49,9 @@ public class EnemySpawner : MonoBehaviour
 
             Instantiate(spawnEffect, new Vector3(randomPoint.x, 1, randomPoint.z),
                 spawnEffect.transform.rotation);
-            Instantiate(enemy, randomPoint, enemy.transform.rotation);
+            GameObject enemyInstance = Instantiate(enemy, randomPoint, enemy.transform.rotation);
+            enemyInstance.transform.SetParent(enemyHolder.transform);
+
             yield return new WaitForSeconds(spawnTime);
         }
     }

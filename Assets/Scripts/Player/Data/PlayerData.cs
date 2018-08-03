@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerData
 {
+    public static  Vector3 defaultPosition = new Vector3(0, 1.1f, -80.7f);
+
     // Controls
     public static float yaw;
     public static bool movePlayer;

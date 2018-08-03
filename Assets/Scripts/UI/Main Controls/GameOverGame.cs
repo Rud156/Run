@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class GameOverGame : MonoBehaviour
 {
-    [Header("Player Stats")]
+    [Header("GameObjects to Reset")]
+    public GameObject player;
+    public GameObject enemyHolder;
+
+    [Header("Effector GameObjects")]
     public PlayerDash playerDash;
     public ParticleSystem playerTrails;
     public EnemySpawner enemySpawner;
@@ -22,13 +26,13 @@ public class GameOverGame : MonoBehaviour
     void OnEnable()
     {
         int currentScore = PlayerData.currentScore;
-        PlayerData.currentScore = 0;
 
         int highScore;
         if (PlayerPrefs.HasKey(ControlsInput.PlayerScore))
             highScore = PlayerPrefs.GetInt(ControlsInput.PlayerScore);
         else
             highScore = currentScore;
+        highScore = highScore > currentScore ? highScore : currentScore;
 
         scoreText.text = currentScore.ToString();
         highScoreText.text = highScore.ToString();
@@ -37,6 +41,16 @@ public class GameOverGame : MonoBehaviour
         playerTrails.Stop();
         enemySpawner.StopSpawn();
         frontEnemySpawner.StopSpawn();
+
+        player.transform.position = PlayerData.defaultPosition;
+        player.transform.rotation = Quaternion.identity;
+        player.GetComponent<MeshRenderer>().enabled = true;
+        player.GetComponent<CapsuleCollider>().enabled = true;
+
+        foreach (Transform child in enemyHolder.transform)
+            Destroy(child.gameObject);
+
+        PlayerData.currentScore = 0;
         PlayerData.movePlayer = false;
     }
 

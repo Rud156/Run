@@ -22,7 +22,7 @@ public class PauseGame : MonoBehaviour
     /// <param name="pauseStatus">The pause state of the application.</param>
     void OnApplicationPause(bool pauseStatus)
     {
-        if (pauseStatus)
+        if (pauseStatus && PlayerData.movePlayer)
             PauseGameOnButtonPress();
     }
 

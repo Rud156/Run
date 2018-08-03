@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NewGame : MonoBehaviour
 {
-    [Header("Game Start Objects")]
+    [Header("Effector GameObjects")]
     public ParticleSystem playerTrails;
     public EnemySpawner enemySpawner;
     public FrontEnemySpawner frontEnemySpawner;
