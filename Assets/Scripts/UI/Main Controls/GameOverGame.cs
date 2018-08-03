@@ -23,7 +23,6 @@ public class GameOverGame : MonoBehaviour
     {
         int currentScore = PlayerData.currentScore;
         PlayerData.currentScore = 0;
-        scoreText.text = currentScore.ToString();
 
         int highScore;
         if (PlayerPrefs.HasKey(ControlsInput.PlayerScore))
@@ -31,6 +30,8 @@ public class GameOverGame : MonoBehaviour
         else
             highScore = currentScore;
 
+        scoreText.text = currentScore.ToString();
+        highScoreText.text = highScore.ToString();
         PlayerPrefs.SetInt(ControlsInput.PlayerScore, highScore);
 
         playerTrails.Stop();
@@ -44,7 +45,7 @@ public class GameOverGame : MonoBehaviour
         playerTrails.Play();
         enemySpawner.StartSpawn();
         frontEnemySpawner.StartSpawn();
-        
+
         PlayerData.movePlayer = true;
         PlayerData.currentScore = 0;
 

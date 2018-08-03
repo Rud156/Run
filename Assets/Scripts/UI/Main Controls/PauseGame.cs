@@ -16,6 +16,16 @@ public class PauseGame : MonoBehaviour
     public GameObject pauseMenuHolder;
     public GameObject mainMenuHolder;
 
+    /// <summary>
+    /// Callback sent to all game objects when the player pauses.
+    /// </summary>
+    /// <param name="pauseStatus">The pause state of the application.</param>
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+            PauseGameOnButtonPress();
+    }
+
     public void PauseGameOnButtonPress()
     {
         Time.timeScale = 0;

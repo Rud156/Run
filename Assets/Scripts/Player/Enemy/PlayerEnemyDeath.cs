@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerEnemyDeath : MonoBehaviour
 {
     [Header("Death Effects")]
-    public GameObject gameOverMenu;
     public GameObject deathEffect;
 
     [Header("UI Content")]
@@ -23,7 +22,7 @@ public class PlayerEnemyDeath : MonoBehaviour
             Instantiate(deathEffect, gameObject.transform.position, deathEffect.transform.rotation);
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
 
             gameOverHolder.SetActive(true);
         }
