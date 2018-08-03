@@ -41,12 +41,14 @@ public class PauseGame : MonoBehaviour
 
     public void ExitToMainMenu()
     {
+        Time.timeScale = 1;
+
         playerDash.ResetDashCount();
         playerTrails.Stop();
         enemySpawner.StopSpawn();
         frontEnemySpawner.StopSpawn();
 
-        gameObject.SetActive(false);
+        pauseMenuHolder.SetActive(false);
         mainMenuHolder.SetActive(true);
     }
 }
