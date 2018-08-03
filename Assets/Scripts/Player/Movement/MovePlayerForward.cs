@@ -18,7 +18,12 @@ public class MovePlayerForward : MonoBehaviour
     void Update()
     {
         if (PlayerData.movePlayer)
-            playerRB.velocity = gameObject.transform.forward * movementSpeed * Time.deltaTime;
+        {
+            float yVelocity = playerRB.velocity.y;
+            Vector3 velocity = gameObject.transform.forward * movementSpeed * Time.deltaTime;
+
+            playerRB.velocity = new Vector3(velocity.x, yVelocity, velocity.z);
+        }
         else
             playerRB.velocity = Vector3.zero;
     }
