@@ -38,6 +38,7 @@ public class GameOverGame : MonoBehaviour
         highScoreText.text = highScore.ToString();
         PlayerPrefs.SetInt(ControlsInput.PlayerScore, highScore);
 
+        playerDash.ResetDashCount();
         playerTrails.Stop();
         enemySpawner.StopSpawn();
         frontEnemySpawner.StopSpawn();
@@ -68,11 +69,6 @@ public class GameOverGame : MonoBehaviour
 
     public void ExitToMainMenu()
     {
-        playerDash.ResetDashCount();
-        playerTrails.Stop();
-        enemySpawner.StopSpawn();
-        frontEnemySpawner.StopSpawn();
-
         gameObject.SetActive(false);
         mainMenuHolder.SetActive(true);
     }

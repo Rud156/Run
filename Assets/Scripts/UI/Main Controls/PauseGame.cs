@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PauseGame : MonoBehaviour
 {
+    [Header("GameObjects to Reset")]
+    public GameObject player;
+    public GameObject enemyHolder;
+
     [Header("Player Stats")]
     public PlayerDash playerDash;
     public ParticleSystem playerTrails;
@@ -47,6 +51,17 @@ public class PauseGame : MonoBehaviour
         playerTrails.Stop();
         enemySpawner.StopSpawn();
         frontEnemySpawner.StopSpawn();
+
+        player.transform.position = PlayerData.defaultPosition;
+        player.transform.rotation = Quaternion.identity;
+        player.GetComponent<MeshRenderer>().enabled = true;
+        player.GetComponent<CapsuleCollider>().enabled = true;
+
+        foreach (Transform child in enemyHolder.transform)
+            Destroy(child.gameObject);
+
+        PlayerData.currentScore = 0;
+        PlayerData.movePlayer = false;
 
         pauseMenuHolder.SetActive(false);
         mainMenuHolder.SetActive(true);

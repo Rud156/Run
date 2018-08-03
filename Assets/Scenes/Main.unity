@@ -2660,6 +2660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce154b291e41a44abecc55176a2a8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 257316299}
+  enemyHolder: {fileID: 2122385094}
   playerDash: {fileID: 1261294755}
   playerTrails: {fileID: 1855674075}
   enemySpawner: {fileID: 970592534}
