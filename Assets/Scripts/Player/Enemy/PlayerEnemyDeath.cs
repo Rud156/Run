@@ -8,8 +8,8 @@ public class PlayerEnemyDeath : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject deathEffect;
 
-    [Header("Player Contents")]
-    public ParticleSystem playerTrails;
+    [Header("UI Content")]
+    public GameObject gameOverHolder;
 
     /// <summary>
     /// OnCollisionEnter is called when this collider/rigidbody has begun
@@ -25,7 +25,7 @@ public class PlayerEnemyDeath : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider>().enabled = false;
 
-            playerTrails.Stop();
+            gameOverHolder.SetActive(true);
         }
     }
 

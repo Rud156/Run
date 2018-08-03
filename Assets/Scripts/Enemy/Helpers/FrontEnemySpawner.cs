@@ -13,12 +13,6 @@ public class FrontEnemySpawner : MonoBehaviour
 
     private Coroutine coroutine;
 
-    // Use this for initialization
-    void Start()
-    {
-        StartSpawn();
-    }
-
     public void StartSpawn()
     {
         coroutine = StartCoroutine(SpawnEnemy());

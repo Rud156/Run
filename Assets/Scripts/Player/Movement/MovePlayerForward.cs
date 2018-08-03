@@ -17,6 +17,9 @@ public class MovePlayerForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerRB.velocity = gameObject.transform.forward * movementSpeed * Time.deltaTime;
+        if (PlayerData.movePlayer)
+            playerRB.velocity = gameObject.transform.forward * movementSpeed * Time.deltaTime;
+        else
+            playerRB.velocity = Vector3.zero;
     }
 }

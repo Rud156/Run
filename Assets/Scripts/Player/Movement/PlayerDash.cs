@@ -80,4 +80,9 @@ public class PlayerDash : MonoBehaviour
 
         currentFrameCount = 0;
     }
+
+    public void ResetDashCount()
+    {
+        currentFrameCount = waitForTotalFrames;
+    }
 }
