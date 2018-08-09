@@ -15,15 +15,9 @@ public class FrontEnemySpawner : MonoBehaviour
 
     private Coroutine coroutine;
 
-    public void StartSpawn()
-    {
-        coroutine = StartCoroutine(SpawnEnemy());
-    }
+    public void StartSpawn() => coroutine = StartCoroutine(SpawnEnemy());
 
-    public void StopSpawn()
-    {
-        StopCoroutine(coroutine);
-    }
+    public void StopSpawn() => StopCoroutine(coroutine);
 
     IEnumerator SpawnEnemy()
     {
