@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarController : MonoBehaviour
+public abstract class BaseCarController : MonoBehaviour
 {
+
     [Header("Wheel Colliders")]
     public WheelCollider frontLWheelCollider;
     public WheelCollider frontRWheelCollider;
@@ -16,40 +17,18 @@ public class CarController : MonoBehaviour
     public Transform rearLWheel;
     public Transform rearRWheel;
 
+    [Header("Movement Stats")]
     public float maxSteerAngle = 30;
     public float motorForce = 50;
 
-    private float horizontalInput;
-    private float verticalInput;
-    private float steerAngle;
-
-    /// <summary>
-    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
-    /// </summary>
-    void FixedUpdate()
+    public abstract void GetInput();
+    public void Steer(float horizontalInput)
     {
-        GetInput();
-
-        Steer();
-        Accelerate();
-
-        UpdateWheelPoses();
-    }
-
-    private void GetInput()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-    }
-
-    private void Steer()
-    {
-        steerAngle = maxSteerAngle * horizontalInput;
+        float steerAngle = maxSteerAngle * horizontalInput;
         frontLWheelCollider.steerAngle = steerAngle;
         frontRWheelCollider.steerAngle = steerAngle;
     }
-
-    private void Accelerate()
+    public void Accelerate(float verticalInput)
     {
         frontLWheelCollider.motorTorque = verticalInput * motorForce;
         frontRWheelCollider.motorTorque = verticalInput * motorForce;
@@ -58,7 +37,7 @@ public class CarController : MonoBehaviour
         rearRWheelCollider.motorTorque = verticalInput * motorForce;
     }
 
-    private void UpdateWheelPoses()
+    public void UpdateWheelPoses()
     {
         UpdateWheelPose(frontLWheelCollider, frontLWheel);
         UpdateWheelPose(frontRWheelCollider, frontRWheel);
@@ -66,7 +45,7 @@ public class CarController : MonoBehaviour
         UpdateWheelPose(rearRWheelCollider, rearRWheel);
     }
 
-    private void UpdateWheelPose(WheelCollider currentCollider, Transform currentTransform)
+    public void UpdateWheelPose(WheelCollider currentCollider, Transform currentTransform)
     {
         Vector3 position = currentTransform.position;
         Quaternion rotation = currentTransform.rotation;
