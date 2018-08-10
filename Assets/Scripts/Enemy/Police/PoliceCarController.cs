@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyCarController : BaseCarController
+public class PoliceCarController : BaseCarController
 {
     [Header("Nav Mesh")]
     public NavMeshAgent enemyAgent;
