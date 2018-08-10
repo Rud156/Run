@@ -12,14 +12,10 @@ public class NavMeshTarget : MonoBehaviour
     private NavMeshAgent agent;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() =>
         agent = GetComponent<NavMeshAgent>();
-    }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    void FixedUpdate() =>
         agent.SetDestination(target.position);
-    }
 }

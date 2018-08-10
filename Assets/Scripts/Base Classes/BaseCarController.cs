@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class BaseCarController : MonoBehaviour
 {
-
     [Header("Wheel Colliders")]
     public WheelCollider frontLWheelCollider;
     public WheelCollider frontRWheelCollider;
@@ -22,12 +21,14 @@ public abstract class BaseCarController : MonoBehaviour
     public float motorForce = 50;
 
     public abstract void GetInput();
+
     public void Steer(float horizontalInput)
     {
         float steerAngle = maxSteerAngle * horizontalInput;
         frontLWheelCollider.steerAngle = steerAngle;
         frontRWheelCollider.steerAngle = steerAngle;
     }
+    
     public void Accelerate(float verticalInput)
     {
         frontLWheelCollider.motorTorque = verticalInput * motorForce;

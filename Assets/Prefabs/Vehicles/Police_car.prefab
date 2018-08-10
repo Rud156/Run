@@ -87,12 +87,11 @@ GameObject:
   - component: {fileID: 65316497847169172}
   - component: {fileID: 54444498901144884}
   - component: {fileID: 114148471626265166}
-  - component: {fileID: 114504542893210360}
-  - component: {fileID: 114840326913019738}
   - component: {fileID: 114334920242149738}
+  - component: {fileID: 114674048024085530}
   m_Layer: 0
   m_Name: Police_car
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,6 +192,22 @@ GameObject:
   - component: {fileID: 146605769407475540}
   m_Layer: 0
   m_Name: RearR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1625422441941332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4474243783143424}
+  - component: {fileID: 195752805746073432}
+  m_Layer: 0
+  m_Name: NavMeshObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,6 +345,19 @@ Transform:
   m_Father: {fileID: 4577810593037912}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4474243783143424
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625422441941332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4956752806289746}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4488164938877912
 Transform:
   m_ObjectHideFlags: 1
@@ -435,6 +463,7 @@ Transform:
   - {fileID: 4488164938877912}
   - {fileID: 4217422062428368}
   - {fileID: 4963943725037362}
+  - {fileID: 4474243783143424}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -823,7 +852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_WaitTime: 0.5
   m_VelocityThreshold: 1
---- !u!114 &114504542893210360
+--- !u!114 &114674048024085530
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -831,60 +860,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195676864334054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d963df58504b69045b8d0d746ba6f777, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f7eab0a3cac494a91896de985f2512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CautiousSpeedFactor: 0.5
-  m_CautiousMaxAngle: 180
-  m_CautiousMaxDistance: 100
-  m_CautiousAngularVelocityFactor: 30
-  m_SteerSensitivity: 0.01
-  m_AccelSensitivity: 1
-  m_BrakeSensitivity: 1
-  m_LateralWanderDistance: 3
-  m_LateralWanderSpeed: 0.2
-  m_AccelWanderAmount: 0.1
-  m_AccelWanderSpeed: 0.1
-  m_BrakeCondition: 2
-  m_Driving: 1
-  m_Target: {fileID: 0}
-  m_StopWhenTargetReached: 0
-  m_ReachTargetThreshold: 2
---- !u!114 &114840326913019738
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195676864334054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CarDriveType: 2
-  m_WheelColliders:
-  - {fileID: 146670611490883472}
-  - {fileID: 146671150612973780}
-  - {fileID: 146605769407475540}
-  - {fileID: 146802722596209784}
-  m_WheelMeshes:
-  - {fileID: 1216630006844744}
-  - {fileID: 1509172701401448}
-  - {fileID: 1717762675165400}
-  - {fileID: 1079320228075082}
-  m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
-  m_MaximumSteerAngle: 30
-  m_SteerHelper: 0.774
-  m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 2000
-  m_ReverseTorque: 150
-  m_MaxHandbrakeTorque: 100000000
-  m_Downforce: 100
-  m_SpeedType: 0
-  m_Topspeed: 250
-  m_RevRangeBoundary: 1
-  m_SlipLimit: 0.4
-  m_BrakeTorque: 20000
+  frontLWheelCollider: {fileID: 146671150612973780}
+  frontRWheelCollider: {fileID: 146670611490883472}
+  rearLWheelCollider: {fileID: 146802722596209784}
+  rearRWheelCollider: {fileID: 146605769407475540}
+  frontLWheel: {fileID: 4458124543594582}
+  frontRWheel: {fileID: 4135790030892720}
+  rearLWheel: {fileID: 4865999645042502}
+  rearRWheel: {fileID: 4160665853156816}
+  maxSteerAngle: 30
+  motorForce: 250
+  enemyAgent: {fileID: 195752805746073432}
+  navMeshObject: {fileID: 1625422441941332}
+  target: {fileID: 0}
 --- !u!146 &146605769407475540
 WheelCollider:
   m_ObjectHideFlags: 1
@@ -1001,3 +992,24 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1.5
   m_Enabled: 1
+--- !u!195 &195752805746073432
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625422441941332}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.1
+  m_Speed: 1
+  m_Acceleration: 0
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.6
+  m_BaseOffset: 0.3
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
