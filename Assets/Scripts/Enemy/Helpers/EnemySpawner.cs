@@ -4,55 +4,63 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyHolder;
-
-    [Header("Spawner Data")]
-    public BoxCollider enclosingBoxCollider;
-    public GameObject enemy;
-    public float spawnTime;
+    [Header("Spawn GameObjects")]
+    public List<Transform> spawnPoints;
     public GameObject spawnEffect;
+    public GameObject enemy;
+    public GameObject spawnerHolder;
 
-    [Header("Player Data")]
-    public GameObject player;
-    public float distanceFromPlayer = 75f;
+    [Header("Spawn Stats")]
+    public float waitBetweenSpawn = 5f;
+    public float waitBeteweenEffectAndSpawn = 0.1f;
+
+    [Header("Debug")]
+    public bool spawnOnStart;
 
     private Coroutine coroutine;
+    private bool coroutineStopped;
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        if (spawnOnStart)
+            StartSpawn();
+    }
 
     public void StartSpawn()
     {
-        coroutine = StartCoroutine(SpawnEnemy());
+        coroutineStopped = false;
+        coroutine = StartCoroutine(SpawnEnemies());
     }
 
     public void StopSpawn()
     {
         StopCoroutine(coroutine);
+        coroutineStopped = true;
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemies()
     {
         while (true)
         {
-            Vector3 randomPoint = new Vector3(
-                Random.Range(-enclosingBoxCollider.bounds.extents.x, enclosingBoxCollider.bounds.extents.x),
-                0,
-                Random.Range(-enclosingBoxCollider.bounds.extents.z, enclosingBoxCollider.bounds.extents.z)
-            ) + enclosingBoxCollider.bounds.center;
+            if (coroutineStopped)
+                break;
 
-            float generatedDistanceFromPlayer = Vector3.Distance(randomPoint,
-                new Vector3(player.transform.position.x, 0, player.transform.position.z));
+            int randomNumber = Random.Range(0, 1000);
+            int randomIndex = randomNumber % spawnPoints.Count;
 
-            if (distanceFromPlayer > generatedDistanceFromPlayer)
-            {
-                yield return null;
-                continue;
-            }
+            Vector3 spawnPosition = spawnPoints[randomIndex].position;
+            Instantiate(spawnEffect, spawnPosition, spawnEffect.transform.rotation);
 
-            Instantiate(spawnEffect, new Vector3(randomPoint.x, 1, randomPoint.z),
-                spawnEffect.transform.rotation);
-            GameObject enemyInstance = Instantiate(enemy, randomPoint, enemy.transform.rotation);
-            enemyInstance.transform.SetParent(enemyHolder.transform);
+            yield return new WaitForSeconds(waitBeteweenEffectAndSpawn);
 
-            yield return new WaitForSeconds(spawnTime);
+            GameObject enemyInstance = Instantiate(enemy, spawnPosition, enemy.transform.rotation);
+            enemyInstance.transform.SetParent(spawnerHolder.transform);
+
+            yield return new WaitForSeconds(waitBetweenSpawn);
         }
     }
 }
