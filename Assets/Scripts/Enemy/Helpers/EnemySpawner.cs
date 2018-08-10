@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
     public bool spawnOnStart;
 
     private Coroutine coroutine;
+    private bool coroutineStopped;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -29,25 +30,37 @@ public class EnemySpawner : MonoBehaviour
             StartSpawn();
     }
 
-    public void StartSpawn() =>
+    public void StartSpawn()
+    {
+        coroutineStopped = false;
         coroutine = StartCoroutine(SpawnEnemies());
+    }
 
-    public void StopSpawn() =>
+    public void StopSpawn()
+    {
         StopCoroutine(coroutine);
+        coroutineStopped = true;
+    }
 
     IEnumerator SpawnEnemies()
     {
-        int randomNumber = Random.Range(0, 1000);
-        int randomIndex = randomNumber % spawnPoints.Count;
+        while (true)
+        {
+            if (coroutineStopped)
+                break;
 
-        Vector3 spawnPosition = spawnPoints[randomIndex].position;
-        Instantiate(spawnEffect, spawnPosition, spawnEffect.transform.rotation);
+            int randomNumber = Random.Range(0, 1000);
+            int randomIndex = randomNumber % spawnPoints.Count;
 
-        yield return new WaitForSeconds(waitBeteweenEffectAndSpawn);
+            Vector3 spawnPosition = spawnPoints[randomIndex].position;
+            Instantiate(spawnEffect, spawnPosition, spawnEffect.transform.rotation);
 
-        GameObject enemyInstance = Instantiate(enemy, spawnPosition, enemy.transform.rotation);
-        enemyInstance.transform.SetParent(spawnerHolder.transform);
+            yield return new WaitForSeconds(waitBeteweenEffectAndSpawn);
 
-        yield return new WaitForSeconds(waitBetweenSpawn);
+            GameObject enemyInstance = Instantiate(enemy, spawnPosition, enemy.transform.rotation);
+            enemyInstance.transform.SetParent(spawnerHolder.transform);
+
+            yield return new WaitForSeconds(waitBetweenSpawn);
+        }
     }
 }
