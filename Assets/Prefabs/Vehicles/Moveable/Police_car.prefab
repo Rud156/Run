@@ -875,7 +875,6 @@ MonoBehaviour:
   motorForce: 250
   enemyAgent: {fileID: 195752805746073432}
   navMeshObject: {fileID: 1625422441941332}
-  target: {fileID: 0}
 --- !u!146 &146605769407475540
 WheelCollider:
   m_ObjectHideFlags: 1
