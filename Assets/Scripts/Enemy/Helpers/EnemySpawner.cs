@@ -18,7 +18,6 @@ public class EnemySpawner : MonoBehaviour
     public bool spawnOnStart;
 
     private Coroutine coroutine;
-    private bool coroutineStopped;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -30,25 +29,16 @@ public class EnemySpawner : MonoBehaviour
             StartSpawn();
     }
 
-    public void StartSpawn()
-    {
-        coroutineStopped = false;
+    public void StartSpawn() =>
         coroutine = StartCoroutine(SpawnEnemies());
-    }
 
-    public void StopSpawn()
-    {
+    public void StopSpawn() =>
         StopCoroutine(coroutine);
-        coroutineStopped = true;
-    }
 
     IEnumerator SpawnEnemies()
     {
         while (true)
         {
-            if (coroutineStopped)
-                break;
-
             int randomNumber = Random.Range(0, 1000);
             int randomIndex = randomNumber % spawnPoints.Count;
 

@@ -39,15 +39,19 @@ public class PlayerCarController : BaseCarController
 
     private void UpdateTrails()
     {
-        DisplayTrail(frontLTrail);
-        DisplayTrail(frontRTrail);
-        DisplayTrail(rearLTrail);
-        DisplayTrail(rearRTrail);
+        DisplayTrail(frontLTrail, frontLWheelCollider);
+        DisplayTrail(frontRTrail, frontRWheelCollider);
+        DisplayTrail(rearLTrail, rearLWheelCollider);
+        DisplayTrail(rearRTrail, rearRWheelCollider);
     }
 
-    private void DisplayTrail(ParticleSystem trail)
+    private void DisplayTrail(ParticleSystem trail, WheelCollider collider)
     {
         ParticleSystem.EmissionModule emission = trail.emission;
-        emission.rateOverTime = Mathf.FloorToInt(verticalInput * maxParticlesToSpawn);
+
+        if (collider.isGrounded)
+            emission.rateOverTime = Mathf.FloorToInt(verticalInput * maxParticlesToSpawn);
+        else
+            emission.rateOverTime = 0;
     }
 }
