@@ -53,7 +53,7 @@ public class TargetClosestPolice : MonoBehaviour
                 Vector3 direction = nearestPolice.transform.position -
                     projectileLaunchPoint.transform.position;
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
-                projectileLaunchPoint.transform.rotation = lookRotation;
+                projectileShooter.transform.rotation = lookRotation;
 
                 GameObject projectileInstance = Instantiate(projectile,
                     projectileLaunchPoint.transform.position, Quaternion.identity);

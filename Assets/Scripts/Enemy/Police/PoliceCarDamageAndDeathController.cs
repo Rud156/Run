@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PoliceCarDamageAndDeathController : MonoBehaviour
 {
-
     [Header("Police Car Stats")]
     public float maxPoliceCarHealth = 30;
     public GameObject destroyEffect;
@@ -21,6 +21,7 @@ public class PoliceCarDamageAndDeathController : MonoBehaviour
 
     private float currentPoliceCarHealth;
     private List<ParticleSystem> vehicleFireParticleSystem;
+    private Rigidbody vehicleRB;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -30,6 +31,7 @@ public class PoliceCarDamageAndDeathController : MonoBehaviour
     {
         currentPoliceCarHealth = maxPoliceCarHealth;
         vehicleFireParticleSystem = new List<ParticleSystem>();
+        vehicleRB = GetComponent<Rigidbody>();
     }
 
     /// <summary>
@@ -52,6 +54,21 @@ public class PoliceCarDamageAndDeathController : MonoBehaviour
         float totalHealthLost = (other.relativeVelocity.magnitude / maxValue) * maxHealthLostFromCollision;
 
         currentPoliceCarHealth -= totalHealthLost;
+    }
+
+    /// <summary>
+    /// OnTriggerEnter is called when the Collider other enters the trigger.
+    /// </summary>
+    /// <param name="other">The other Collider involved in this collision.</param>
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(TagManager.Bullet))
+        {
+            float damageAmount = other.GetComponent<DestroyProjectile>().damageAmount;
+
+            vehicleRB.AddExplosionForce(damageAmount, other.transform.position, 3f, 3f, ForceMode.Impulse);
+            currentPoliceCarHealth -= damageAmount;
+        }
     }
 
     private void UpdateHealth()
