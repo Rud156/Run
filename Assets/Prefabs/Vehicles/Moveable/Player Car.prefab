@@ -2110,7 +2110,7 @@ MonoBehaviour:
   projectileLaunchPoint: {fileID: 1742391896744860}
   projectileLaunchSpeed: 10
   waitBetweenShots: 0.3
-  minDistanceBeforeShooting: 10
+  minDistanceBeforeShooting: 20
 --- !u!136 &136922934728873468
 CapsuleCollider:
   m_ObjectHideFlags: 1

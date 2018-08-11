@@ -10569,6 +10569,17 @@ Prefab:
       propertyPath: policeHolder
       value: 
       objectReference: {fileID: 1433037469}
+    - target: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: waitBetweenShots
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: shotEffect
+      value: 
+      objectReference: {fileID: 1824584541499862, guid: 0ca05ef5acca9a24c910817b3117b382,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
   m_IsPrefabAsset: 0

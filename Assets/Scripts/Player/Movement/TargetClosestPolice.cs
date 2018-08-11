@@ -15,6 +15,7 @@ public class TargetClosestPolice : MonoBehaviour
     [Header("Shooter Stats")]
     public float waitBetweenShots;
     public float minDistanceBeforeShooting;
+    public GameObject shotEffect;
 
     private Coroutine coroutine;
 
@@ -53,11 +54,15 @@ public class TargetClosestPolice : MonoBehaviour
                 Vector3 direction = nearestPolice.transform.position -
                     projectileLaunchPoint.transform.position;
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
+
                 projectileShooter.transform.rotation = lookRotation;
+
+                GameObject shotEffectInstance = Instantiate(shotEffect,
+                    projectileLaunchPoint.transform.position, Quaternion.identity);
+                shotEffectInstance.transform.rotation = lookRotation;
 
                 GameObject projectileInstance = Instantiate(projectile,
                     projectileLaunchPoint.transform.position, Quaternion.identity);
-
                 projectileInstance.GetComponent<Rigidbody>().velocity =
                     projectileLaunchPoint.transform.forward * projectileLaunchSpeed;
             }
