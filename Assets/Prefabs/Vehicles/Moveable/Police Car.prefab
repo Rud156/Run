@@ -994,11 +994,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!146 &146670611490883472
 WheelCollider:
@@ -1023,11 +1023,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!146 &146671150612973780
 WheelCollider:
@@ -1052,11 +1052,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!146 &146802722596209784
 WheelCollider:
@@ -1081,11 +1081,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!195 &195752805746073432
 NavMeshAgent:
