@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2488b730a39315b46a08102f0085183a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destoryEffect: {fileID: 1892299658533328, guid: 39ecd852c47803448aaa8b82bc1c19b4,
+  destoryEffect: {fileID: 1594059430369204, guid: 39ecd852c47803448aaa8b82bc1c19b4,
     type: 2}
   damageAmount: 10
 --- !u!135 &135651677820096732
