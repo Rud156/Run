@@ -525,7 +525,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: fb57deec1f6b9d94b8cf6a09e249fc71, type: 2}
+  - {fileID: 2100000, guid: d1609d52f4f81da40955e6165cb60e78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0afc2bae7e77947b73d79243742896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPoliceCarHealth: 30
+  maxCarHealth: 30
   destroyEffect: {fileID: 1238837482338272, guid: 314a71e1260bca9488c108fbba5a6b09,
     type: 2}
   maxHealthLostFromCollision: 10

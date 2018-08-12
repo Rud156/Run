@@ -28,6 +28,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1078577448008444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4762985437317162}
+  - component: {fileID: 33054260208556876}
+  - component: {fileID: 23147002953611526}
+  - component: {fileID: 65900643184981052}
+  m_Layer: 0
+  m_Name: Vehicle Fire Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1134635471718232
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +59,7 @@ GameObject:
   - component: {fileID: 114685107897397682}
   - component: {fileID: 114433486089770638}
   - component: {fileID: 114907679073615138}
+  - component: {fileID: 114095643066453664}
   m_Layer: 0
   m_Name: Player Car
   m_TagString: Player
@@ -936,6 +955,20 @@ Transform:
   m_Father: {fileID: 4911979903429860}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4762985437317162
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078577448008444}
+  m_LocalRotation: {x: 0.000000021855694, y: -0.00000008742278, z: 1.9106855e-15,
+    w: 1}
+  m_LocalPosition: {x: 0, y: 0.20500183, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4911979903429860}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4780294295006842
 Transform:
   m_ObjectHideFlags: 1
@@ -1019,6 +1052,7 @@ Transform:
   - {fileID: 4443614588644100}
   - {fileID: 4146903896056890}
   - {fileID: 4819843857955324}
+  - {fileID: 4762985437317162}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1131,6 +1165,41 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23147002953611526
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078577448008444}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23161438753751416
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1216,7 +1285,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: fb57deec1f6b9d94b8cf6a09e249fc71, type: 2}
+  - {fileID: 2100000, guid: d1609d52f4f81da40955e6165cb60e78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1866,6 +1935,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!33 &33054260208556876
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078577448008444}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33063016969269886
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2054,6 +2130,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 2.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65900643184981052
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078577448008444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114095643066453664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134635471718232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bbc9ea170b19748b99db758e3b47f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCarHealth: 250
+  destroyEffect: {fileID: 1238837482338272, guid: 314a71e1260bca9488c108fbba5a6b09,
+    type: 2}
+  maxHealthLostFromCollision: 3
+  maxDamagePossible: 20
+  healthRatioToSpawnFire: 0.5
+  minFireParticles: 30
+  maxFireParticles: 100
+  vehicleFireSpawnPoint: {fileID: 1078577448008444}
+  vehicleFire: {fileID: 1417824703818320, guid: cfa6b04371ff9e547a01cb6a260032b4,
+    type: 2}
+  thresholdBeforeSwitching: 0.7
+  waitTimeBetweenSwitching: 0.1
+  damageMaterial: {fileID: 2100000, guid: 68495fd43e61646499e7283a8430376b, type: 2}
+  originalMaterial: {fileID: 2100000, guid: d1609d52f4f81da40955e6165cb60e78, type: 2}
+  vehicleBody: {fileID: 23264683854464744}
 --- !u!114 &114433486089770638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2109,8 +2224,9 @@ MonoBehaviour:
   projectileShooter: {fileID: 1597697926758830}
   projectileLaunchPoint: {fileID: 1742391896744860}
   projectileLaunchSpeed: 10
-  waitBetweenShots: 0.3
-  minDistanceBeforeShooting: 20
+  waitBetweenShots: 0.7
+  minDistanceBeforeShooting: 10
+  shotEffect: {fileID: 1824584541499862, guid: 0ca05ef5acca9a24c910817b3117b382, type: 2}
 --- !u!136 &136922934728873468
 CapsuleCollider:
   m_ObjectHideFlags: 1

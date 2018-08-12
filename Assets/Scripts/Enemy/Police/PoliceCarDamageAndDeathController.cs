@@ -4,57 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PoliceCarDamageAndDeathController : MonoBehaviour
+public class PoliceCarDamageAndDeathController : BaseDamageAndDeathController
 {
-    [Header("Police Car Stats")]
-    public float maxPoliceCarHealth = 30;
-    public GameObject destroyEffect;
-    public float maxHealthLostFromCollision = 10;
-    public float maxDamagePossible;
-
-    [Header("Vehicle Fire")]
-    public float healthRatioToSpawnFire = 0.75f;
-    public int minFireParticles = 30;
-    public int maxFireParticles = 100;
-    public GameObject vehicleFireSpawnPoint;
-    public GameObject vehicleFire;
-
-    private float currentPoliceCarHealth;
-    private List<ParticleSystem> vehicleFireParticleSystem;
-    private Rigidbody vehicleRB;
-
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start()
-    {
-        currentPoliceCarHealth = maxPoliceCarHealth;
-        vehicleFireParticleSystem = new List<ParticleSystem>();
-        vehicleRB = GetComponent<Rigidbody>();
-    }
+    void Start() => base.Init();
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     void Update()
     {
-        UpdateHealth();
-        CheckHealthZero();
+        base.UpdateHealth();
+        base.CheckHealthZero();
     }
 
     /// <summary>
-	/// OnCollisionEnter is called when this collider/rigidbody has begun
-	/// touching another rigidbody/collider.
-	/// </summary>
-	/// <param name="other">The Collision data associated with this collision.</param>
-	void OnCollisionEnter(Collision other)
-    {
-        float maxValue = Mathf.Max(other.relativeVelocity.magnitude, maxDamagePossible);
-        float totalHealthLost = (other.relativeVelocity.magnitude / maxValue) * maxHealthLostFromCollision;
-
-        currentPoliceCarHealth -= totalHealthLost;
-    }
+    /// OnCollisionEnter is called when this collider/rigidbody has begun
+    /// touching another rigidbody/collider.
+    /// </summary>
+    /// <param name="other">The Collision data associated with this collision.</param>
+    void OnCollisionEnter(Collision other) => base.CheckSolidCollision(other);
 
     /// <summary>
     /// OnTriggerEnter is called when the Collider other enters the trigger.
@@ -67,46 +39,7 @@ public class PoliceCarDamageAndDeathController : MonoBehaviour
             float damageAmount = other.GetComponent<DestroyProjectile>().damageAmount;
 
             vehicleRB.AddExplosionForce(damageAmount, other.transform.position, 3f, 3f, ForceMode.Impulse);
-            currentPoliceCarHealth -= damageAmount;
-        }
-    }
-
-    private void UpdateHealth()
-    {
-        float currentHealthRatio = currentPoliceCarHealth / maxPoliceCarHealth;
-        if (currentHealthRatio >= healthRatioToSpawnFire)
-            return;
-
-        if (vehicleFireParticleSystem.Count == 0)
-        {
-            GameObject vehicleFireInstance = Instantiate(vehicleFire,
-                vehicleFireSpawnPoint.transform.position,
-                vehicleFire.transform.rotation);
-            vehicleFireInstance.transform.SetParent(gameObject.transform);
-
-            vehicleFireParticleSystem.Add(vehicleFireInstance.
-                transform.GetChild(0).GetComponent<ParticleSystem>());
-            vehicleFireParticleSystem.Add(vehicleFireInstance.
-                transform.GetChild(1).GetComponent<ParticleSystem>());
-        }
-
-        foreach (ParticleSystem item in vehicleFireParticleSystem)
-        {
-            float mappedEmission = ExtensionFunctions.Map(currentHealthRatio,
-                healthRatioToSpawnFire, 0,
-                minFireParticles, maxFireParticles);
-
-            ParticleSystem.EmissionModule emission = item.emission;
-            emission.rateOverTime = mappedEmission;
-        }
-    }
-
-    private void CheckHealthZero()
-    {
-        if (currentPoliceCarHealth <= 0)
-        {
-            Instantiate(destroyEffect, transform.position, destroyEffect.transform.rotation);
-            Destroy(gameObject);
+            base.currentCarHealth -= damageAmount;
         }
     }
 }
