@@ -4406,7 +4406,7 @@ MonoBehaviour:
   - {fileID: 1400862962}
   - {fileID: 517217557}
   - {fileID: 1928726005}
-  spawnEffect: {fileID: 1590678675321530, guid: 36541d28822baf24ba4d1716fff06728,
+  spawnEffect: {fileID: 1098653619415604, guid: 36541d28822baf24ba4d1716fff06728,
     type: 2}
   enemy: {fileID: 1195676864334054, guid: 5cd12187cb59a4e4c9d21051d8f1ab15, type: 2}
   spawnerHolder: {fileID: 1433037469}
