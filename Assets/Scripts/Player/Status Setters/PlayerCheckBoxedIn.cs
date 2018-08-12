@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class PlayerCheckBoxedIn : MonoBehaviour
 {
     public GameObject policeHolder;
-    public Animator bustedTextHolder;
     public float minVelocityThreshold;
     public float minPoliceRange;
     public int maxBustedAmount;
+
+    [Header("Busted")]
+    public Animator bustedTextHolder;
+    public Slider bustedSlider;
+    public GameObject bustedSliderHolder;
 
     private Rigidbody playerRB;
     private float bustedAmount;
@@ -31,6 +35,12 @@ public class PlayerCheckBoxedIn : MonoBehaviour
     /// </summary>
     void LateUpdate()
     {
+        CheckBusted();
+        UpdateBustedUI();
+    }
+
+    private void CheckBusted()
+    {
         GameObject nearestPolice = GetNearestPoliceVehicle();
         float normalizedVelocity = Mathf.Abs(playerRB.velocity.magnitude);
 
@@ -48,6 +58,17 @@ public class PlayerCheckBoxedIn : MonoBehaviour
 
         if (bustedAmount >= maxBustedAmount)
             bustedTextHolder.SetTrigger(AnimatorVariables.FadeIn);
+    }
+
+    private void UpdateBustedUI()
+    {
+        if (bustedAmount <= 0)
+            bustedSliderHolder.SetActive(false);
+        else
+            bustedSliderHolder.SetActive(true);
+
+        float bustedRatio = bustedAmount / maxBustedAmount;
+        bustedSlider.value = bustedRatio;
     }
 
     private GameObject GetNearestPoliceVehicle()

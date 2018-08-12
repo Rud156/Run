@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4591610561729252}
+  - component: {fileID: 114724253583295320}
   m_Layer: 0
   m_Name: HeadLamp Holder
   m_TagString: Untagged
@@ -74,6 +75,7 @@ GameObject:
   - component: {fileID: 114433486089770638}
   - component: {fileID: 114907679073615138}
   - component: {fileID: 114095643066453664}
+  - component: {fileID: 114200134687920330}
   m_Layer: 0
   m_Name: Player Car
   m_TagString: Player
@@ -2318,6 +2320,24 @@ MonoBehaviour:
   damageMaterial: {fileID: 2100000, guid: 68495fd43e61646499e7283a8430376b, type: 2}
   originalMaterial: {fileID: 2100000, guid: d1609d52f4f81da40955e6165cb60e78, type: 2}
   vehicleBody: {fileID: 23264683854464744}
+--- !u!114 &114200134687920330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134635471718232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45e5da0e192ac0468eeb02bc3375d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  policeHolder: {fileID: 0}
+  minVelocityThreshold: 3
+  minPoliceRange: 5
+  maxBustedAmount: 300
+  bustedTextHolder: {fileID: 0}
+  bustedSlider: {fileID: 0}
+  bustedSliderHolder: {fileID: 0}
 --- !u!114 &114433486089770638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2357,6 +2377,21 @@ MonoBehaviour:
   rearLTrail: {fileID: 198680519543170402}
   rearRTrail: {fileID: 198752714516385172}
   maxParticlesToSpawn: 100
+--- !u!114 &114724253583295320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112420201449314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8591d59e432fe824cbba374c7a3e97ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intensityThreshold: 1
+  directionalLight: {fileID: 0}
+  headLampL: {fileID: 1286466873738930}
+  headLampR: {fileID: 1579222621611826}
 --- !u!114 &114907679073615138
 MonoBehaviour:
   m_ObjectHideFlags: 1
