@@ -4412,7 +4412,7 @@ MonoBehaviour:
   spawnerHolder: {fileID: 1433037469}
   waitBetweenSpawn: 7
   waitBeteweenEffectAndSpawn: 0.1
-  spawnOnStart: 0
+  spawnOnStart: 1
 --- !u!1 &607180823
 GameObject:
   m_ObjectHideFlags: 0
