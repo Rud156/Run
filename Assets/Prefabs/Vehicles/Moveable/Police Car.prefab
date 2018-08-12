@@ -893,11 +893,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0afc2bae7e77947b73d79243742896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCarHealth: 30
+  maxCarHealth: 50
   destroyEffect: {fileID: 1238837482338272, guid: 314a71e1260bca9488c108fbba5a6b09,
     type: 2}
-  maxHealthLostFromCollision: 10
-  maxDamagePossible: 250
+  maxHealthLostFromCollision: 1
+  maxDamagePossible: 20
   healthRatioToSpawnFire: 0.5
   minFireParticles: 30
   maxFireParticles: 100
