@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4762985437317162}
   - component: {fileID: 33054260208556876}
   - component: {fileID: 23147002953611526}
-  - component: {fileID: 65900643184981052}
   m_Layer: 0
   m_Name: Vehicle Fire Spawn Point
   m_TagString: Untagged
@@ -361,7 +360,6 @@ GameObject:
   - component: {fileID: 4819843857955324}
   - component: {fileID: 33903282403184616}
   - component: {fileID: 23697983788399230}
-  - component: {fileID: 136922934728873468}
   m_Layer: 0
   m_Name: Tactical Stock Base
   m_TagString: Untagged
@@ -963,7 +961,7 @@ Transform:
   m_GameObject: {fileID: 1078577448008444}
   m_LocalRotation: {x: 0.000000021855694, y: -0.00000008742278, z: 1.9106855e-15,
     w: 1}
-  m_LocalPosition: {x: 0, y: 0.20500183, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4911979903429860}
@@ -1171,7 +1169,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078577448008444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2130,18 +2128,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 2.3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65900643184981052
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1078577448008444}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114095643066453664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2156,7 +2142,7 @@ MonoBehaviour:
   maxCarHealth: 250
   destroyEffect: {fileID: 1238837482338272, guid: 314a71e1260bca9488c108fbba5a6b09,
     type: 2}
-  maxHealthLostFromCollision: 3
+  maxHealthLostFromCollision: 10
   maxDamagePossible: 20
   healthRatioToSpawnFire: 0.5
   minFireParticles: 30
@@ -2227,19 +2213,6 @@ MonoBehaviour:
   waitBetweenShots: 0.7
   minDistanceBeforeShooting: 10
   shotEffect: {fileID: 1824584541499862, guid: 0ca05ef5acca9a24c910817b3117b382, type: 2}
---- !u!136 &136922934728873468
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1597697926758830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!146 &146338754761560274
 WheelCollider:
   m_ObjectHideFlags: 1
@@ -2263,11 +2236,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!146 &146486778209590048
 WheelCollider:
@@ -2292,11 +2265,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!146 &146616411962070092
 WheelCollider:
@@ -2321,11 +2294,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!146 &146767025987135972
 WheelCollider:
@@ -2350,11 +2323,11 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 0.5
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_AsymptoteValue: 1
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!198 &198166686588272996
 ParticleSystem:

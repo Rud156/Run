@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destoryEffect: {fileID: 1892299658533328, guid: 39ecd852c47803448aaa8b82bc1c19b4,
     type: 2}
-  damageAmount: 5
+  damageAmount: 10
 --- !u!135 &135651677820096732
 SphereCollider:
   m_ObjectHideFlags: 1
