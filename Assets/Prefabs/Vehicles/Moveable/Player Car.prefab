@@ -434,21 +434,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1629907658932696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4146903896056890}
-  m_Layer: 0
-  m_Name: Vehicle Fire Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1646651229137690
 GameObject:
   m_ObjectHideFlags: 1
@@ -689,19 +674,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4365894047110546}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4146903896056890
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629907658932696}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4911979903429860}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4148221853656038
 Transform:
@@ -967,7 +939,7 @@ Transform:
   - {fileID: 4281582102716470}
   - {fileID: 4175833902741746}
   m_Father: {fileID: 4911979903429860}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0.22600001, y: 0.010000001, z: -0.024}
 --- !u!4 &4648867855583792
 Transform:
@@ -1139,9 +1111,8 @@ Transform:
   - {fileID: 4667481310549182}
   - {fileID: 4443614588644100}
   - {fileID: 4819843857955324}
-  - {fileID: 4146903896056890}
-  - {fileID: 4762985437317162}
   - {fileID: 4591610561729252}
+  - {fileID: 4762985437317162}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2229,7 +2200,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.9098039, b: 0.7137255, a: 1}
-  m_Intensity: 5
+  m_Intensity: 3.5
   m_Range: 30
   m_SpotAngle: 60
   m_CookieSize: 10
@@ -2266,7 +2237,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.9098039, b: 0.7137255, a: 1}
-  m_Intensity: 5
+  m_Intensity: 3.5
   m_Range: 30
   m_SpotAngle: 60
   m_CookieSize: 10
@@ -2315,6 +2286,10 @@ MonoBehaviour:
   vehicleFireSpawnPoint: {fileID: 1078577448008444}
   vehicleFire: {fileID: 1417824703818320, guid: cfa6b04371ff9e547a01cb6a260032b4,
     type: 2}
+  magnitude: 5
+  roughness: 5
+  fadeInTime: 0.15
+  fadeOutTime: 0.15
   thresholdBeforeSwitching: 0.7
   waitTimeBetweenSwitching: 0.1
   damageMaterial: {fileID: 2100000, guid: 68495fd43e61646499e7283a8430376b, type: 2}
@@ -2388,7 +2363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8591d59e432fe824cbba374c7a3e97ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityThreshold: 1
+  intensityThreshold: 0.5
   directionalLight: {fileID: 0}
   headLampL: {fileID: 1286466873738930}
   headLampR: {fileID: 1579222621611826}

@@ -33,6 +33,9 @@ public class PlayerMissionSpawner : MonoBehaviour
     public Light directionalLight;
     public float lightIntensityDecreaseRate = 0.01f;
     public float policeSpawnerTimeDecreaseRate = 0.5f;
+    public float minimumLightIntensity = 0.1f;
+    public float maximumLightIntensity = 1f;
+    public float minimumPoliceSpawnerTime = 0.3f;
 
     private MissionPoint missionBeginObject;
     private MissionPoint missionEndObject;
@@ -61,7 +64,7 @@ public class PlayerMissionSpawner : MonoBehaviour
             return;
 
         float currentLightIntensity = directionalLight.intensity;
-        if (currentLightIntensity > 0.3)
+        if (currentLightIntensity > minimumLightIntensity)
             directionalLight.intensity -= lightIntensityDecreaseRate * Time.deltaTime;
     }
 
@@ -141,7 +144,7 @@ public class PlayerMissionSpawner : MonoBehaviour
         }
 
         missionBeginValidated = true;
-        directionalLight.intensity = 1.5f;
+        directionalLight.intensity = maximumLightIntensity;
 
         StartCoroutine(CauseExplosionAndShake(missionBeginObject.missionExplosionPoint));
 
@@ -153,7 +156,7 @@ public class PlayerMissionSpawner : MonoBehaviour
         missionEndValidated = true;
 
         float currentWaitTime = policeSpawner.waitBeteweenEffectAndSpawn;
-        currentWaitTime = currentWaitTime <= 0.5 ? currentWaitTime :
+        currentWaitTime = currentWaitTime <= minimumPoliceSpawnerTime ? currentWaitTime :
             currentWaitTime - policeSpawnerTimeDecreaseRate;
         policeSpawner.waitBeteweenEffectAndSpawn -= currentWaitTime;
 
