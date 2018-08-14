@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public abstract class BaseDamageAndDeathController : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public abstract class BaseDamageAndDeathController : MonoBehaviour
     public int maxFireParticles = 100;
     public GameObject vehicleFireSpawnPoint;
     public GameObject vehicleFire;
+
+    [Header("Camera Shaker")]
+    public float magnitude = 5;
+    public float roughness = 5;
+    public float fadeInTime = 0.15f;
+    public float fadeOutTime = 0.15f;
 
     protected float currentCarHealth;
     protected List<ParticleSystem> vehicleFireParticleSystem;
@@ -81,6 +88,7 @@ public abstract class BaseDamageAndDeathController : MonoBehaviour
         if (currentCarHealth <= 0)
         {
             Instantiate(destroyEffect, transform.position, destroyEffect.transform.rotation);
+            CameraShaker.Instance.ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime);
             Destroy(gameObject);
         }
     }

@@ -32,7 +32,7 @@ public class PlayerMissionSpawner : MonoBehaviour
     public EnemySpawner policeSpawner;
     public Light directionalLight;
     public float lightIntensityDecreaseRate = 0.01f;
-    public float policeSpawnerTimeDecreaseRate = 0.3f;
+    public float policeSpawnerTimeDecreaseRate = 0.5f;
 
     private MissionPoint missionBeginObject;
     private MissionPoint missionEndObject;
