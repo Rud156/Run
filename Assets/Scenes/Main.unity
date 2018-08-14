@@ -3489,6 +3489,16 @@ Prefab:
       propertyPath: policeHolder
       value: 
       objectReference: {fileID: 1433037469}
+    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: rewardTextAnimator
+      value: 
+      objectReference: {fileID: 514609898}
+    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: rewardTextMesh
+      value: 
+      objectReference: {fileID: 514609896}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
   m_IsPrefabAsset: 0
@@ -7470,6 +7480,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4819225296741560, guid: 52919b753045e2340b7cf5143e882c6a,
     type: 2}
   m_PrefabInternal: {fileID: 856137585}
+--- !u!114 &859170617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+    type: 2}
+  m_PrefabInternal: {fileID: 462507326}
+  m_Script: {fileID: 11500000, guid: a6bbc9ea170b19748b99db758e3b47f3, type: 3}
 --- !u!1001 &864684791
 Prefab:
   m_ObjectHideFlags: 0
@@ -10290,8 +10306,7 @@ MonoBehaviour:
   roughness: 10
   fadeInTime: 0.15
   fadeOutTime: 0.2
-  rewardTextAnimator: {fileID: 514609898}
-  rewardTextMesh: {fileID: 514609896}
+  playerDamage: {fileID: 859170617}
   policeSpawner: {fileID: 600878796}
   lightIntensityDecreaseRate: 0.05
   policeSpawnerTimeDecreaseRate: 0.3

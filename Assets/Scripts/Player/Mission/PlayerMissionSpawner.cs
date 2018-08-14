@@ -27,9 +27,9 @@ public class PlayerMissionSpawner : MonoBehaviour
     public float roughness = 5;
     public float fadeInTime = 0.15f;
     public float fadeOutTime = 0.15f;
+
     [Header("Reward Text")]
-    public Animator rewardTextAnimator;
-    public TextMesh rewardTextMesh;
+    public PlayerDamageAndDeathController playerDamage;
 
     [Header("Global Effectors")]
     public EnemySpawner policeSpawner;
@@ -148,8 +148,7 @@ public class PlayerMissionSpawner : MonoBehaviour
         policeSpawner.waitBeteweenEffectAndSpawn -= currentWaitTime;
 
         float randomHealth = (Random.Range(0, 1000) % 10) + 1;
-        rewardTextMesh.text = $"+{randomHealth} Health";
-        rewardTextAnimator.SetTrigger(AnimatorVariables.DisplayText);
+        playerDamage.IncreaseHealth(randomHealth);
 
         SpawnMission();
     }

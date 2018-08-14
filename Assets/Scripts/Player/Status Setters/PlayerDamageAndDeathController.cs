@@ -12,6 +12,10 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     public Slider healthSlider;
     public Image healthFiller;
 
+    [Header("Health Increase")]
+    public Animator rewardTextAnimator;
+    public TextMesh rewardTextMesh;
+
     [Header("Damage Effect")]
     public float thresholdBeforeSwitching;
     public float waitTimeBetweenSwitching;
@@ -36,19 +40,6 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
         UpdateHealthToUI();
     }
 
-    private void UpdateHealthToUI()
-    {
-        float maxHealth = base.maxCarHealth;
-        float currentHealthLeft = base.currentCarHealth;
-        float healthRatio = currentHealthLeft / maxHealth;
-
-        if (healthRatio <= 0.5)
-            healthFiller.color = Color.Lerp(minHealthColor, halfHealthColor, healthRatio * 2);
-        else
-            healthFiller.color = Color.Lerp(halfHealthColor, maxHealthColor, (healthRatio - 0.5f) * 2);
-        healthSlider.value = healthRatio;
-    }
-
     /// <summary>
     /// OnCollisionEnter is called when this collider/rigidbody has begun
     /// touching another rigidbody/collider.
@@ -64,5 +55,29 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
             yield return new WaitForSeconds(waitTimeBetweenSwitching);
             vehicleBody.material = originalMaterial;
         }
+    }
+
+    public void IncreaseHealth(float healthAmount)
+    {
+        rewardTextMesh.text = $"+{healthAmount} Health";
+        rewardTextAnimator.SetTrigger(AnimatorVariables.DisplayText);
+
+        if (currentCarHealth + healthAmount >= maxCarHealth)
+            currentCarHealth = maxCarHealth;
+        else
+            currentCarHealth += healthAmount;
+    }
+
+    private void UpdateHealthToUI()
+    {
+        float maxHealth = base.maxCarHealth;
+        float currentHealthLeft = base.currentCarHealth;
+        float healthRatio = currentHealthLeft / maxHealth;
+
+        if (healthRatio <= 0.5)
+            healthFiller.color = Color.Lerp(minHealthColor, halfHealthColor, healthRatio * 2);
+        else
+            healthFiller.color = Color.Lerp(halfHealthColor, maxHealthColor, (healthRatio - 0.5f) * 2);
+        healthSlider.value = healthRatio;
     }
 }
