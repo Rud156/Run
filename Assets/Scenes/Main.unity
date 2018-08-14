@@ -4193,6 +4193,16 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 508961693}
   m_CullTransparentMesh: 0
+--- !u!102 &514609896 stripped
+TextMesh:
+  m_CorrespondingSourceObject: {fileID: 102718254557318842, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+    type: 2}
+  m_PrefabInternal: {fileID: 462507326}
+--- !u!95 &514609898 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95674835741499222, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+    type: 2}
+  m_PrefabInternal: {fileID: 462507326}
 --- !u!1 &517217556
 GameObject:
   m_ObjectHideFlags: 0
@@ -5697,7 +5707,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 657388244}
   m_LocalRotation: {x: -0, y: 0.09358197, z: -0, w: 0.9956116}
-  m_LocalPosition: {x: 312.8, y: 49.01, z: 120.5}
+  m_LocalPosition: {x: 312.8, y: 48.84, z: 120.5}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 2039016054}
@@ -10280,6 +10290,8 @@ MonoBehaviour:
   roughness: 10
   fadeInTime: 0.15
   fadeOutTime: 0.2
+  rewardTextAnimator: {fileID: 514609898}
+  rewardTextMesh: {fileID: 514609896}
   policeSpawner: {fileID: 600878796}
   lightIntensityDecreaseRate: 0.05
   policeSpawnerTimeDecreaseRate: 0.3
@@ -11781,7 +11793,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1461660937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 192.53, y: 54.64, z: 263.86}
+  m_LocalPosition: {x: 192.53, y: 53.36, z: 263.86}
   m_LocalScale: {x: 7, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 2039016054}
@@ -13324,7 +13336,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637417162}
   m_LocalRotation: {x: -0, y: 0.08951716, z: -0, w: 0.9959853}
-  m_LocalPosition: {x: 359.15, y: 50.63, z: 432.65}
+  m_LocalPosition: {x: 359.15, y: 50.43, z: 432.65}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 2039016054}

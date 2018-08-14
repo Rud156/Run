@@ -27,14 +27,14 @@ public class PlayerMissionSpawner : MonoBehaviour
     public float roughness = 5;
     public float fadeInTime = 0.15f;
     public float fadeOutTime = 0.15f;
+    [Header("Reward Text")]
+    public Animator rewardTextAnimator;
+    public TextMesh rewardTextMesh;
 
     [Header("Global Effectors")]
     public EnemySpawner policeSpawner;
-    // public Light directionalLight;
     public float lightIntensityDecreaseRate = 0.01f;
     public float policeSpawnerTimeDecreaseRate = 0.5f;
-    // public float minimumLightIntensity = 0.1f;
-    // public float maximumLightIntensity = 1f;
     public float minimumPoliceSpawnerTime = 0.3f;
 
     private MissionPoint missionBeginObject;
@@ -54,19 +54,6 @@ public class PlayerMissionSpawner : MonoBehaviour
         firstMissionActivated = false;
         StartMissions();
     }
-
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
-    // void Update()
-    // {
-    //     if (!firstMissionActivated)
-    //         return;
-
-    //     float currentLightIntensity = directionalLight.intensity;
-    //     if (currentLightIntensity > minimumLightIntensity)
-    //         directionalLight.intensity -= lightIntensityDecreaseRate * Time.deltaTime;
-    // }
 
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -159,6 +146,10 @@ public class PlayerMissionSpawner : MonoBehaviour
         currentWaitTime = currentWaitTime <= minimumPoliceSpawnerTime ? currentWaitTime :
             currentWaitTime - policeSpawnerTimeDecreaseRate;
         policeSpawner.waitBeteweenEffectAndSpawn -= currentWaitTime;
+
+        float randomHealth = (Random.Range(0, 1000) % 10) + 1;
+        rewardTextMesh.text = $"+{randomHealth} Health";
+        rewardTextAnimator.SetTrigger(AnimatorVariables.DisplayText);
 
         SpawnMission();
     }
