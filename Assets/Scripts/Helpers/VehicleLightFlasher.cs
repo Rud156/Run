@@ -30,12 +30,16 @@ public class VehicleLightFlasher : MonoBehaviour
             if (selectRed)
             {
                 redLight.material.color = redColor;
+                redLight.material.SetColor("_EmissionColor", redColor * 4);
                 blueLight.material.color = blackColor;
+                blueLight.material.SetColor("_EmissionColor", blackColor);
             }
             else
             {
                 redLight.material.color = blackColor;
+                redLight.material.SetColor("_EmissionColor", blackColor);
                 blueLight.material.color = blueColor;
+                blueLight.material.SetColor("_EmissionColor", blueColor * 4);
             }
 
             selectRed = !selectRed;

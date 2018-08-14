@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerDamageAndDeathController : BaseDamageAndDeathController
 {
-    [Header("Damage Display")]
+    [Header("Health Display")]
+    public Color minHealthColor = Color.red;
+    public Color halfHealthColor = Color.yellow;
+    public Color maxHealthColor = Color.green;
+    public Slider healthSlider;
+    public Image healthFiller;
+
+    [Header("Damage Effect")]
     public float thresholdBeforeSwitching;
     public float waitTimeBetweenSwitching;
     public Material damageMaterial;
@@ -24,6 +32,21 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     {
         base.UpdateHealth();
         base.CheckHealthZero();
+
+        UpdateHealthToUI();
+    }
+
+    private void UpdateHealthToUI()
+    {
+        float maxHealth = base.maxCarHealth;
+        float currentHealthLeft = base.currentCarHealth;
+        float healthRatio = currentHealthLeft / maxHealth;
+
+        if (healthRatio <= 0.5)
+            healthFiller.color = Color.Lerp(minHealthColor, halfHealthColor, healthRatio * 2);
+        else
+            healthFiller.color = Color.Lerp(halfHealthColor, maxHealthColor, (healthRatio - 0.5f) * 2);
+        healthSlider.value = healthRatio;
     }
 
     /// <summary>

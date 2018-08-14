@@ -53,14 +53,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4591610561729252}
-  - component: {fileID: 114724253583295320}
   m_Layer: 0
   m_Name: HeadLamp Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1134635471718232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2289,11 @@ MonoBehaviour:
   roughness: 5
   fadeInTime: 0.15
   fadeOutTime: 0.15
+  minHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  halfHealthColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
+  healthSlider: {fileID: 0}
+  healthFiller: {fileID: 0}
   thresholdBeforeSwitching: 0.7
   waitTimeBetweenSwitching: 0.1
   damageMaterial: {fileID: 2100000, guid: 68495fd43e61646499e7283a8430376b, type: 2}
@@ -2352,21 +2356,6 @@ MonoBehaviour:
   rearLTrail: {fileID: 198680519543170402}
   rearRTrail: {fileID: 198752714516385172}
   maxParticlesToSpawn: 100
---- !u!114 &114724253583295320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1112420201449314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8591d59e432fe824cbba374c7a3e97ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensityThreshold: 0.5
-  directionalLight: {fileID: 0}
-  headLampL: {fileID: 1286466873738930}
-  headLampR: {fileID: 1579222621611826}
 --- !u!114 &114907679073615138
 MonoBehaviour:
   m_ObjectHideFlags: 1

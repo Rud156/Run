@@ -30,11 +30,11 @@ public class PlayerMissionSpawner : MonoBehaviour
 
     [Header("Global Effectors")]
     public EnemySpawner policeSpawner;
-    public Light directionalLight;
+    // public Light directionalLight;
     public float lightIntensityDecreaseRate = 0.01f;
     public float policeSpawnerTimeDecreaseRate = 0.5f;
-    public float minimumLightIntensity = 0.1f;
-    public float maximumLightIntensity = 1f;
+    // public float minimumLightIntensity = 0.1f;
+    // public float maximumLightIntensity = 1f;
     public float minimumPoliceSpawnerTime = 0.3f;
 
     private MissionPoint missionBeginObject;
@@ -58,15 +58,15 @@ public class PlayerMissionSpawner : MonoBehaviour
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
-    void Update()
-    {
-        if (!firstMissionActivated)
-            return;
+    // void Update()
+    // {
+    //     if (!firstMissionActivated)
+    //         return;
 
-        float currentLightIntensity = directionalLight.intensity;
-        if (currentLightIntensity > minimumLightIntensity)
-            directionalLight.intensity -= lightIntensityDecreaseRate * Time.deltaTime;
-    }
+    //     float currentLightIntensity = directionalLight.intensity;
+    //     if (currentLightIntensity > minimumLightIntensity)
+    //         directionalLight.intensity -= lightIntensityDecreaseRate * Time.deltaTime;
+    // }
 
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -144,7 +144,7 @@ public class PlayerMissionSpawner : MonoBehaviour
         }
 
         missionBeginValidated = true;
-        directionalLight.intensity = maximumLightIntensity;
+        // directionalLight.intensity = maximumLightIntensity;
 
         StartCoroutine(CauseExplosionAndShake(missionBeginObject.missionExplosionPoint));
 
