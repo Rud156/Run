@@ -3502,6 +3502,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &462507327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+    type: 2}
+  m_PrefabInternal: {fileID: 462507326}
+  m_Script: {fileID: 11500000, guid: 1a44a00dc7aab0c42a05ff7a2591220e, type: 3}
 --- !u!1 &476145464
 GameObject:
   m_ObjectHideFlags: 0
@@ -10256,6 +10262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277530022}
   - component: {fileID: 1277530021}
+  - component: {fileID: 1277530023}
   m_Layer: 0
   m_Name: Objective Spawner
   m_TagString: Untagged
@@ -10306,7 +10313,7 @@ MonoBehaviour:
   roughness: 10
   fadeInTime: 0.15
   fadeOutTime: 0.2
-  playerDamage: {fileID: 859170617}
+  missionRewardController: {fileID: 1277530023}
   policeSpawner: {fileID: 600878796}
   lightIntensityDecreaseRate: 0.05
   policeSpawnerTimeDecreaseRate: 0.3
@@ -10324,6 +10331,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1277530023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1277530020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45c1f4c4a0a38046aa544a17df4dffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHealth: 1
+  maxHealth: 10
+  minBulletTime: 0.01
+  maxBulletTime: 0.07
+  rewardTextAnimator: {fileID: 514609898}
+  rewardTextMesh: {fileID: 514609896}
+  playerDamage: {fileID: 859170617}
+  playerTargetClosestPolice: {fileID: 462507327}
 --- !u!1 &1283798312
 GameObject:
   m_ObjectHideFlags: 0

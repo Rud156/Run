@@ -12,10 +12,6 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     public Slider healthSlider;
     public Image healthFiller;
 
-    [Header("Health Increase")]
-    public Animator rewardTextAnimator;
-    public TextMesh rewardTextMesh;
-
     [Header("Damage Effect")]
     public float thresholdBeforeSwitching;
     public float waitTimeBetweenSwitching;
@@ -59,9 +55,6 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
 
     public void IncreaseHealth(float healthAmount)
     {
-        rewardTextMesh.text = $"+{healthAmount} Health";
-        rewardTextAnimator.SetTrigger(AnimatorVariables.DisplayText);
-
         if (currentCarHealth + healthAmount >= maxCarHealth)
             currentCarHealth = maxCarHealth;
         else

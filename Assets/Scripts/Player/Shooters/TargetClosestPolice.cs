@@ -29,6 +29,12 @@ public class TargetClosestPolice : MonoBehaviour
 
     public void StopShooting() => StopCoroutine(coroutine);
 
+    public void DecreaseBulletTime(float deltaAmount)
+    {
+        if (waitBetweenShots - deltaAmount >= 0.4)
+            waitBetweenShots -= deltaAmount;
+    }
+
     IEnumerator Shoot()
     {
         while (true)

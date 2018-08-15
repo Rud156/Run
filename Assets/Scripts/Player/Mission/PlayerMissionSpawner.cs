@@ -28,8 +28,8 @@ public class PlayerMissionSpawner : MonoBehaviour
     public float fadeInTime = 0.15f;
     public float fadeOutTime = 0.15f;
 
-    [Header("Reward Text")]
-    public PlayerDamageAndDeathController playerDamage;
+    [Header("Reward Controller")]
+    public MissionRewardsController missionRewardController;
 
     [Header("Global Effectors")]
     public EnemySpawner policeSpawner;
@@ -147,9 +147,7 @@ public class PlayerMissionSpawner : MonoBehaviour
             currentWaitTime - policeSpawnerTimeDecreaseRate;
         policeSpawner.waitBeteweenEffectAndSpawn -= currentWaitTime;
 
-        float randomHealth = (Random.Range(0, 1000) % 10) + 1;
-        playerDamage.IncreaseHealth(randomHealth);
-
+        missionRewardController.GenerateReward();
         SpawnMission();
     }
 
