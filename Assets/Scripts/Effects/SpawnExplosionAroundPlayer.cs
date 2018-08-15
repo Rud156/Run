@@ -42,6 +42,7 @@ public class SpawnExplosionAroundPlayer : MonoBehaviour
             foreach (Collider collider in colliders)
             {
                 Rigidbody rb = collider.GetComponent<Rigidbody>();
+
                 if (!rb || !rb.CompareTag(TagManager.Enemy))
                     continue;
 

@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 46557203}
   m_Layer: 0
   m_Name: Police Car 1
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7770,6 +7770,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1871601512294726, guid: a18b7ba560a9c7047ab9e8a160fc649f, type: 2}
+      propertyPath: m_TagString
+      value: Static Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551965371045748, guid: a18b7ba560a9c7047ab9e8a160fc649f, type: 2}
+      propertyPath: m_TagString
+      value: Static Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18b7ba560a9c7047ab9e8a160fc649f, type: 2}
   m_IsPrefabAsset: 0
@@ -10944,7 +10952,7 @@ GameObject:
   - component: {fileID: 1332688597}
   m_Layer: 0
   m_Name: Police Car
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11589,7 +11597,7 @@ GameObject:
   - component: {fileID: 1398451811}
   m_Layer: 0
   m_Name: Police Car
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13780,7 +13788,7 @@ GameObject:
   - component: {fileID: 1636139559}
   m_Layer: 0
   m_Name: Police Car 1
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14495,7 +14503,7 @@ GameObject:
   - component: {fileID: 1693038283}
   m_Layer: 0
   m_Name: Police Car
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14729,7 +14737,7 @@ GameObject:
   - component: {fileID: 1723256780}
   m_Layer: 0
   m_Name: Police Car 1
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15269,7 +15277,7 @@ GameObject:
   - component: {fileID: 1774762242}
   m_Layer: 0
   m_Name: Police Car 1
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15623,7 +15631,7 @@ GameObject:
   - component: {fileID: 1825031524}
   m_Layer: 0
   m_Name: Police Car
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15782,7 +15790,7 @@ GameObject:
   - component: {fileID: 1833638429}
   m_Layer: 0
   m_Name: Police Car
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15960,7 +15968,7 @@ GameObject:
   - component: {fileID: 1849284471}
   m_Layer: 0
   m_Name: Police Car 1
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17003,7 +17011,7 @@ GameObject:
   - component: {fileID: 1954876406}
   m_Layer: 0
   m_Name: Police Car
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17286,7 +17294,7 @@ GameObject:
   - component: {fileID: 1965212409}
   m_Layer: 0
   m_Name: Police Car 1
-  m_TagString: Enemy
+  m_TagString: Static Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
