@@ -11,6 +11,7 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     public Color maxHealthColor = Color.green;
     public Slider healthSlider;
     public Image healthFiller;
+    public AudioSource vehicleDamage;
 
     [Header("Damage Effect")]
     public float thresholdBeforeSwitching;
@@ -23,7 +24,7 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start() => Init();
+    void Start() => base.Init();
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -50,6 +51,7 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
             vehicleBody.material = damageMaterial;
             yield return new WaitForSeconds(waitTimeBetweenSwitching);
             vehicleBody.material = originalMaterial;
+            vehicleDamage.Play();
         }
     }
 
