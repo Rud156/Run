@@ -60,8 +60,7 @@ public class PlayerMissionSpawner : MonoBehaviour
     /// </summary>
     void FixedUpdate() => SelectObjectiveToPointAndSetDirection();
 
-    public void StartMissions() =>
-        SpawnMission();
+    public void StartMissions() => SpawnMission();
 
     private void SelectObjectiveToPointAndSetDirection()
     {
