@@ -28,8 +28,9 @@ public class PlayerMissionSpawner : MonoBehaviour
     public float fadeInTime = 0.15f;
     public float fadeOutTime = 0.15f;
 
-    [Header("Reward Controller")]
+    [Header("Side Effects Controller")]
     public MissionRewardsController missionRewardController;
+    public PlayerIncreaseScoreController scoreController;
 
     [Header("Global Effectors")]
     public EnemySpawner policeSpawner;
@@ -127,10 +128,10 @@ public class PlayerMissionSpawner : MonoBehaviour
         {
             firstMissionActivated = true;
             policeSpawner.StartSpawn();
+            scoreController.StartScoreCalculation();
         }
 
         missionBeginValidated = true;
-        // directionalLight.intensity = maximumLightIntensity;
 
         StartCoroutine(CauseExplosionAndShake(missionBeginObject.missionExplosionPoint));
 

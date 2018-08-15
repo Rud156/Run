@@ -19,28 +19,43 @@ public class PlayerIncreaseScoreController : MonoBehaviour
     public Text uiScoreText;
 
     private float currentScore;
+    private bool startScoring;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start() => currentScore = 0;
+    void Start()
+    {
+        startScoring = false;
+        currentScore = 0;
+    }
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     void Update()
     {
-        currentScore += scoreIncreaseRate * Time.deltaTime;
-        uiScoreText.text = $"Points: {currentScore}";
+        if (!startScoring)
+            return;
+
+        currentScore += (scoreIncreaseRate * Time.deltaTime);
+        uiScoreText.text = $"Points: {ExtensionFunctions.Format2DecimalPlace(currentScore)}";
     }
 
-    public void GenerateRandomScore()
+    public void GenerateRandomScore(Vector3 position)
     {
+        if (!startScoring)
+            return;
+
         int randomScore = Random.Range(minScoreAmount, maxScoreAmount);
         rewardTextMesh.text = $"+{randomScore} Points";
         rewardTextAnimator.SetTrigger(AnimatorVariables.DisplayText);
 
+        Instantiate(scoreEffect, position, scoreEffect.transform.rotation);
+
         currentScore += randomScore;
     }
+
+    public void StartScoreCalculation() => startScoring = true;
 }

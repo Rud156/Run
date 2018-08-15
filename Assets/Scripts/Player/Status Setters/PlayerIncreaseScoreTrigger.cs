@@ -16,6 +16,6 @@ public class PlayerIncreaseScoreTrigger : MonoBehaviour
         if (!playerRB || !other.CompareTag(TagManager.Player))
             return;
 
-        scoreController.GenerateRandomScore();
+        scoreController.GenerateRandomScore(transform.position);
     }
 }

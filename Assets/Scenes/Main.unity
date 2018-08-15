@@ -10554,6 +10554,7 @@ MonoBehaviour:
   fadeInTime: 0.15
   fadeOutTime: 0.2
   missionRewardController: {fileID: 1277530023}
+  scoreController: {fileID: 1935320183}
   policeSpawner: {fileID: 600878796}
   lightIntensityDecreaseRate: 0.05
   policeSpawnerTimeDecreaseRate: 0.3
@@ -11447,7 +11448,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Points: 0'
 --- !u!222 &1381808819
 CanvasRenderer:
   m_ObjectHideFlags: 0

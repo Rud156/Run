@@ -18,4 +18,6 @@ public class ExtensionFunctions
 
         return to;
     }
+
+    public static string Format2DecimalPlace(float value) => value.ToString("0.##");
 }
