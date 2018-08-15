@@ -10263,6 +10263,7 @@ GameObject:
   - component: {fileID: 1277530022}
   - component: {fileID: 1277530021}
   - component: {fileID: 1277530023}
+  - component: {fileID: 1277530024}
   m_Layer: 0
   m_Name: Objective Spawner
   m_TagString: Untagged
@@ -10350,6 +10351,31 @@ MonoBehaviour:
   rewardTextMesh: {fileID: 514609896}
   playerDamage: {fileID: 859170617}
   playerTargetClosestPolice: {fileID: 462507327}
+  explosionSpawner: {fileID: 1277530024}
+--- !u!114 &1277530024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1277530020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63267ec962bbd0243a6bdba10c17850b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundExplosionEffect: {fileID: 1667546984162844, guid: ff279db9b7285d44aac109f1f1dbe202,
+    type: 2}
+  heightAboveGroundToSpawn: 0.2
+  totalGroundEffectsToSpawn: 10
+  radius: 10
+  affectRadius: 5
+  damagePower: 10
+  damageAmount: 20
+  playerTransform: {fileID: 246829866}
+  magnitude: 15
+  roughness: 10
+  fadeInTime: 0.3
+  fadeOutTime: 0.3
 --- !u!1 &1283798312
 GameObject:
   m_ObjectHideFlags: 0

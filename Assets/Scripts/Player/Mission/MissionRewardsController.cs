@@ -20,6 +20,9 @@ public class MissionRewardsController : MonoBehaviour
     public PlayerDamageAndDeathController playerDamage;
     public TargetClosestPolice playerTargetClosestPolice;
 
+    [Header("Enemy Stats Effector")]
+    public SpawnExplosionAroundPlayer explosionSpawner;
+
     public void GenerateReward()
     {
         float randomValue = Random.Range(0, 1f);
@@ -28,6 +31,8 @@ public class MissionRewardsController : MonoBehaviour
             GenerateHealthReward();
         else
             GenerateBulletTimeReward();
+
+        explosionSpawner.SpawnEffectAroundPlayer();
     }
 
     private void GenerateHealthReward()

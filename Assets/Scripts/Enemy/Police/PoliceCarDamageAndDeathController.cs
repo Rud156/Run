@@ -43,4 +43,7 @@ public class PoliceCarDamageAndDeathController : BaseDamageAndDeathController
             base.currentCarHealth -= damageAmount;
         }
     }
+
+    public void ReduceHealth(float healthAmount) =>
+        base.currentCarHealth -= healthAmount;
 }
