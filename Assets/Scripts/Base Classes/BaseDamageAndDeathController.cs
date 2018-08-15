@@ -83,6 +83,17 @@ public abstract class BaseDamageAndDeathController : MonoBehaviour
         }
     }
 
+    public void IncreaseHealth(float healthAmount)
+    {
+        if (currentCarHealth + healthAmount >= maxCarHealth)
+            currentCarHealth = maxCarHealth;
+        else
+            currentCarHealth += healthAmount;
+    }
+
+    public void ReduceHealth(float healthAmount) =>
+        currentCarHealth -= healthAmount;
+
     public void CheckHealthZero()
     {
         if (currentCarHealth <= 0)

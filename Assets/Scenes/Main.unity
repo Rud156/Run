@@ -3475,6 +3475,11 @@ Prefab:
       propertyPath: bustedSliderHolder
       value: 
       objectReference: {fileID: 1518582444}
+    - target: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: policeHolder
+      value: 
+      objectReference: {fileID: 1433037469}
     - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
       propertyPath: healthSlider
@@ -3485,21 +3490,11 @@ Prefab:
       propertyPath: healthFiller
       value: 
       objectReference: {fileID: 508961695}
-    - target: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+    - target: {fileID: 114900195923227834, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
-      propertyPath: policeHolder
+      propertyPath: uiScoreText
       value: 
-      objectReference: {fileID: 1433037469}
-    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
-        type: 2}
-      propertyPath: rewardTextAnimator
-      value: 
-      objectReference: {fileID: 514609898}
-    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
-        type: 2}
-      propertyPath: rewardTextMesh
-      value: 
-      objectReference: {fileID: 514609896}
+      objectReference: {fileID: 1381808818}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
   m_IsPrefabAsset: 0
@@ -10607,19 +10602,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63267ec962bbd0243a6bdba10c17850b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundExplosionEffect: {fileID: 1667546984162844, guid: ff279db9b7285d44aac109f1f1dbe202,
-    type: 2}
-  heightAboveGroundToSpawn: 0.2
   totalGroundEffectsToSpawn: 10
-  radius: 10
-  affectRadius: 5
-  damagePower: 10
-  damageAmount: 20
+  spawnRadius: 7
+  heightAbovePlayerToSpawn: 10
+  meteor: {fileID: 1660512661259752, guid: 8e095e60371a6014a80e3148c05b6b89, type: 2}
   playerTransform: {fileID: 246829866}
-  magnitude: 15
-  roughness: 10
-  fadeInTime: 0.3
-  fadeOutTime: 0.3
 --- !u!1 &1283798312
 GameObject:
   m_ObjectHideFlags: 0
@@ -16812,30 +16799,12 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1.5
   m_Enabled: 1
---- !u!1 &1935320182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134635471718232, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+--- !u!114 &1935320183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114900195923227834, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
     type: 2}
   m_PrefabInternal: {fileID: 462507326}
---- !u!114 &1935320183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1935320182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ca0676616e997e438e8d04ef6fe7346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreEffect: {fileID: 1961194242692414, guid: 102a1a7ae7611114987b62dcb3595d23,
-    type: 2}
-  minScoreAmount: 1
-  maxScoreAmount: 5
-  scoreIncreaseRate: 0.1
-  rewardTextMesh: {fileID: 514609896}
-  rewardTextAnimator: {fileID: 514609898}
-  uiScoreText: {fileID: 1381808818}
 --- !u!1001 &1936643508
 Prefab:
   m_ObjectHideFlags: 0

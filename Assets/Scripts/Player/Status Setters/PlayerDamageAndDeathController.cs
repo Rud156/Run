@@ -53,14 +53,6 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
         }
     }
 
-    public void IncreaseHealth(float healthAmount)
-    {
-        if (currentCarHealth + healthAmount >= maxCarHealth)
-            currentCarHealth = maxCarHealth;
-        else
-            currentCarHealth += healthAmount;
-    }
-
     private void UpdateHealthToUI()
     {
         float maxHealth = base.maxCarHealth;

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using EZCameraShake;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PoliceCarDamageAndDeathController : BaseDamageAndDeathController
@@ -43,7 +42,4 @@ public class PoliceCarDamageAndDeathController : BaseDamageAndDeathController
             base.currentCarHealth -= damageAmount;
         }
     }
-
-    public void ReduceHealth(float healthAmount) =>
-        base.currentCarHealth -= healthAmount;
 }
