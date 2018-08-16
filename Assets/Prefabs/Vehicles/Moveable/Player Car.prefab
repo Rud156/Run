@@ -70,8 +70,8 @@ GameObject:
   - component: {fileID: 4911979903429860}
   - component: {fileID: 65007352472247938}
   - component: {fileID: 54194288019469894}
-  - component: {fileID: 114685107897397682}
   - component: {fileID: 82009208423366832}
+  - component: {fileID: 114685107897397682}
   - component: {fileID: 114433486089770638}
   - component: {fileID: 114907679073615138}
   - component: {fileID: 114095643066453664}
@@ -2299,7 +2299,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b28a33994ca38db438c1eb5af25cc685, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: 0
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2527,8 +2527,8 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   healthFiller: {fileID: 0}
   vehicleDamage: {fileID: 82009208423366832}
-  maxAudioPitch: 3
-  minAudioPitch: 0
+  maxAudioVolume: 0.9
+  minAudioVolume: 0.1
   thresholdBeforeSwitching: 0.7
   waitTimeBetweenSwitching: 0.1
   damageMaterial: {fileID: 2100000, guid: 68495fd43e61646499e7283a8430376b, type: 2}
@@ -2591,6 +2591,7 @@ MonoBehaviour:
   rearLTrail: {fileID: 198680519543170402}
   rearRTrail: {fileID: 198752714516385172}
   maxParticlesToSpawn: 100
+  disableDefaultControl: 0
 --- !u!114 &114900195923227834
 MonoBehaviour:
   m_ObjectHideFlags: 1

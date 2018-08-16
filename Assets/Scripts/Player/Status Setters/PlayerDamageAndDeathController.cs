@@ -14,8 +14,8 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
 
     [Header("Audio Display")]
     public AudioSource vehicleDamage;
-    public float maxAudioPitch = 3;
-    public float minAudioPitch = 0;
+    public float maxAudioVolume = 0.9f;
+    public float minAudioVolume = 0.5f;
 
     [Header("Damage Effect")]
     public float thresholdBeforeSwitching;
@@ -61,11 +61,11 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
 
     private void PlayAudio(Collision other)
     {
-        float maxDamage = Mathf.Max(other.relativeVelocity.magnitude, base.maxDamagePossible);
-        float damagePitch = ((other.relativeVelocity.magnitude / maxDamage) * maxAudioPitch) +
-            minAudioPitch;
+        float maxVolume = Mathf.Max(other.relativeVelocity.magnitude, base.maxDamagePossible);
+        float damageVolume = ((other.relativeVelocity.magnitude / maxVolume) * maxAudioVolume) +
+            minAudioVolume;
 
-        vehicleDamage.pitch = damagePitch;
+        vehicleDamage.volume = damageVolume;
         vehicleDamage.Play();
     }
 
