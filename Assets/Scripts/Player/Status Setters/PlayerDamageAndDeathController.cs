@@ -26,14 +26,17 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     public Material originalMaterial;
     public Renderer vehicleBody;
 
-    [Header("Next Scene Trigger")]
-    public ChangeSceneOnTrigger changeSceneOnTrigger;
+    private PlayerIncreaseScoreController increaseScoreController;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start() => base.Init();
+    void Start()
+    {
+        base.Init();
+        increaseScoreController = GetComponent<PlayerIncreaseScoreController>();
+    }
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
@@ -68,7 +71,7 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     {
         if (base.currentCarHealth <= 0)
         {
-            changeSceneOnTrigger.ChangeSceneInvoke();
+            increaseScoreController.SendScoreToSceneTrigger(false);
             Destroy(directionArrow);
             base.CheckHealthZero();
         }

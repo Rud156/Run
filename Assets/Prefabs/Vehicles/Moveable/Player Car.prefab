@@ -2535,7 +2535,6 @@ MonoBehaviour:
   damageMaterial: {fileID: 2100000, guid: 68495fd43e61646499e7283a8430376b, type: 2}
   originalMaterial: {fileID: 2100000, guid: d1609d52f4f81da40955e6165cb60e78, type: 2}
   vehicleBody: {fileID: 23264683854464744}
-  changeSceneOnTrigger: {fileID: 0}
 --- !u!114 &114200134687920330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2554,7 +2553,6 @@ MonoBehaviour:
   bustedTextHolder: {fileID: 0}
   bustedSlider: {fileID: 0}
   bustedSliderHolder: {fileID: 0}
-  changeSceneOnTrigger: {fileID: 0}
 --- !u!114 &114433486089770638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2614,6 +2612,7 @@ MonoBehaviour:
   rewardTextMesh: {fileID: 102718254557318842}
   rewardTextAnimator: {fileID: 95674835741499222}
   uiScoreText: {fileID: 0}
+  changeSceneOnTrigger: {fileID: 0}
 --- !u!114 &114907679073615138
 MonoBehaviour:
   m_ObjectHideFlags: 1

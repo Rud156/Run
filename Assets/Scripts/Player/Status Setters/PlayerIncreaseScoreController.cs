@@ -18,6 +18,9 @@ public class PlayerIncreaseScoreController : MonoBehaviour
     [Header("UI Text")]
     public Text uiScoreText;
 
+    [Header("Scene Changer")]
+    public ChangeSceneOnTrigger changeSceneOnTrigger;
+
     private float currentScore;
     private bool startScoring;
 
@@ -58,4 +61,7 @@ public class PlayerIncreaseScoreController : MonoBehaviour
     }
 
     public void StartScoreCalculation() => startScoring = true;
+
+    public void SendScoreToSceneTrigger(bool busted) =>
+        changeSceneOnTrigger.SetScoreAndChangeScreen(currentScore, busted);
 }

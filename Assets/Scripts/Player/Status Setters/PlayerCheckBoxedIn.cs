@@ -15,13 +15,13 @@ public class PlayerCheckBoxedIn : MonoBehaviour
     public Animator bustedTextHolder;
     public Slider bustedSlider;
     public GameObject bustedSliderHolder;
-    public ChangeSceneOnTrigger changeSceneOnTrigger;
 
     private Rigidbody playerRB;
     private float bustedAmount;
 
     private PlayerCarController playerCarController;
     private TargetClosestPolice targetClosestPolice;
+    private PlayerIncreaseScoreController increaseScoreController;
 
     private bool bustedSet;
 
@@ -32,8 +32,10 @@ public class PlayerCheckBoxedIn : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+
         playerCarController = GetComponent<PlayerCarController>();
         targetClosestPolice = GetComponent<TargetClosestPolice>();
+        increaseScoreController = GetComponent<PlayerIncreaseScoreController>();
 
         bustedAmount = 0;
         bustedSet = false;
@@ -77,7 +79,7 @@ public class PlayerCheckBoxedIn : MonoBehaviour
             playerCarController.disableDefaultControl = true;
 
             bustedSet = true;
-            changeSceneOnTrigger.ChangeSceneInvoke(true);
+            increaseScoreController.SendScoreToSceneTrigger(true);
         }
     }
 

@@ -13834,11 +13834,6 @@ Prefab:
       propertyPath: bustedSliderHolder
       value: 
       objectReference: {fileID: 1518582444}
-    - target: {fileID: 114200134687920330, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
-        type: 2}
-      propertyPath: changeSceneOnTrigger
-      value: 
-      objectReference: {fileID: 1281081313}
     - target: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
       propertyPath: policeHolder
@@ -13859,16 +13854,16 @@ Prefab:
       propertyPath: healthFiller
       value: 
       objectReference: {fileID: 508961695}
-    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
-        type: 2}
-      propertyPath: changeSceneOnTrigger
-      value: 
-      objectReference: {fileID: 1281081313}
     - target: {fileID: 114900195923227834, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
       propertyPath: uiScoreText
       value: 
       objectReference: {fileID: 1381808818}
+    - target: {fileID: 114900195923227834, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: changeSceneOnTrigger
+      value: 
+      objectReference: {fileID: 1281081313}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
   m_IsPrefabAsset: 0
