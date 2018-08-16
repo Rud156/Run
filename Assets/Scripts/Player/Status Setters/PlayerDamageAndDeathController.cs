@@ -26,6 +26,9 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     public Material originalMaterial;
     public Renderer vehicleBody;
 
+    [Header("Next Scene Trigger")]
+    public ChangeSceneOnTrigger changeSceneOnTrigger;
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -65,6 +68,7 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     {
         if (base.currentCarHealth <= 0)
         {
+            changeSceneOnTrigger.ChangeSceneInvoke();
             Destroy(directionArrow);
             base.CheckHealthZero();
         }

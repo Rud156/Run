@@ -76,6 +76,9 @@ public class PlayerMissionSpawner : MonoBehaviour
 
     private void SetArrowDirection(GameObject objective)
     {
+        if (playerTransform == null)
+            return;
+
         Vector3 directionToObjective = objective.transform.position -
                 playerTransform.position;
         Quaternion rotation = Quaternion.LookRotation(directionToObjective);

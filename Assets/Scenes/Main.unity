@@ -13859,6 +13859,11 @@ Prefab:
       propertyPath: healthFiller
       value: 
       objectReference: {fileID: 508961695}
+    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: changeSceneOnTrigger
+      value: 
+      objectReference: {fileID: 1281081313}
     - target: {fileID: 114900195923227834, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
       propertyPath: uiScoreText
@@ -16982,7 +16987,6 @@ MonoBehaviour:
   lookSpeed: 10
   cameraOffset: {x: 0, y: 4, z: -5}
   player: {fileID: 246829866}
-  changeSceneOnTrigger: {fileID: 1281081313}
 --- !u!4 &1899505880
 Transform:
   m_ObjectHideFlags: 0

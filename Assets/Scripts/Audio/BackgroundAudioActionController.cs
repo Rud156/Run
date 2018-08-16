@@ -36,6 +36,9 @@ public class BackgroundAudioActionController : MonoBehaviour
 
     private void CalculateAudioPitch()
     {
+        if (playerTransform == null)
+            return;
+
         int totalPolice = policeHolderTransform.childCount;
         totalPolice = totalPolice > maxVehiclesToConsider ? maxVehiclesToConsider : totalPolice;
         float currentTotal = 0;
