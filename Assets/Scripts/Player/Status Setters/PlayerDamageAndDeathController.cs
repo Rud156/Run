@@ -11,7 +11,11 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     public Color maxHealthColor = Color.green;
     public Slider healthSlider;
     public Image healthFiller;
+
+    [Header("Audio Display")]
     public AudioSource vehicleDamage;
+    public float maxAudioPitch = 3;
+    public float minAudioPitch = 0;
 
     [Header("Damage Effect")]
     public float thresholdBeforeSwitching;
@@ -49,10 +53,22 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
         if (healthLostCurrentFrame > thresholdBeforeSwitching)
         {
             vehicleBody.material = damageMaterial;
+            PlayAudio(other);
             yield return new WaitForSeconds(waitTimeBetweenSwitching);
             vehicleBody.material = originalMaterial;
-            vehicleDamage.Play();
         }
+    }
+
+    private void PlayAudio(Collision other)
+    {
+        float maxDamage = Mathf.Max(other.relativeVelocity.magnitude, base.maxDamagePossible);
+        float damagePitch = ((other.relativeVelocity.magnitude / maxDamage) * maxAudioPitch) +
+            minAudioPitch;
+
+        print(damagePitch);
+
+        vehicleDamage.pitch = damagePitch;
+        vehicleDamage.Play();
     }
 
     private void UpdateHealthToUI()

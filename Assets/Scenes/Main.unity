@@ -1055,31 +1055,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 424.76
+      value: 425.72
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 51.63
+      value: 51.31
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 72.71
+      value: 73.66
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.06578725
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.6837059
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.06211496
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7241271
       objectReference: {fileID: 0}
     - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
       propertyPath: m_RootOrder
@@ -1125,6 +1125,14 @@ Prefab:
       propertyPath: uiScoreText
       value: 
       objectReference: {fileID: 1381808818}
+    - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -86.711006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911979903429860, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -10.382001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f292d4b8f104a7d4a8ee044cfd86d29a, type: 2}
   m_IsPrefabAsset: 0
@@ -4967,7 +4975,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 49220ed5a8b4f1c41939619e6a1d5a20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24fd21aba892f5c46881d7763ebc2212, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -16715,7 +16723,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899505878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 161.44, y: 53, z: 141}
+  m_LocalPosition: {x: 424.76, y: 51.63, z: 68.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 689871265}
