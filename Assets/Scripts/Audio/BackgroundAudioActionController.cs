@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class BackgroundAudioActionController : MonoBehaviour
 {
+    [Header("GameObjects Affecting")]
     public Transform policeHolderTransform;
     public Transform playerTransform;
+
+    [Header("Audio Pitch")]
     public float maxAudioPitch = 2.5f;
     public float minAudioPitch = 0.5f;
+    [Range(0, 1)]
+    public float pitchLerpRatio = 0.7f;
+
+    [Header("Player Distance")]
     public float minDistanceToPlayer = 5f;
     public float maxDistanceToPlayer = 15f;
+
+    [Header("Misc")]
     public int maxVehiclesToConsider = 7;
 
     private AudioSource audioSource;
@@ -49,6 +58,9 @@ public class BackgroundAudioActionController : MonoBehaviour
         float maxValuePossible = maxVehiclesToConsider * maxAudioPitch;
         float audioPitchRatio = currentTotal / maxValuePossible;
 
-        audioSource.pitch = ExtensionFunctions.Map(audioPitchRatio, 0, 1, minAudioPitch, maxAudioPitch);
+        float currentPitch = audioSource.pitch;
+        float expectedPitch = ExtensionFunctions.Map(audioPitchRatio, 0, 1, minAudioPitch, maxAudioPitch);
+
+        audioSource.pitch = Mathf.Lerp(currentPitch, expectedPitch, pitchLerpRatio);
     }
 }

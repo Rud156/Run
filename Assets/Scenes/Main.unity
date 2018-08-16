@@ -5005,6 +5005,7 @@ MonoBehaviour:
   playerTransform: {fileID: 246829866}
   maxAudioPitch: 1.5
   minAudioPitch: 1
+  pitchLerpRatio: 0.5
   minDistanceToPlayer: 5
   maxDistanceToPlayer: 15
   maxVehiclesToConsider: 7
@@ -12058,7 +12059,7 @@ MonoBehaviour:
   rearLCollider: {fileID: 104706360}
   rearRCollider: {fileID: 1209362078}
   motorForce: 250
-  maxMovePlayerTime: 3
+  maxMovePlayerTime: 7
 --- !u!1 &1414385997
 GameObject:
   m_ObjectHideFlags: 0

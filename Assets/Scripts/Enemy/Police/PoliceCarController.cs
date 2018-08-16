@@ -40,7 +40,11 @@ public class PoliceCarController : BaseCarController
         navMeshObject.transform.localPosition = Vector3.zero;
         navMeshObject.transform.localRotation = Quaternion.identity;
 
-        enemyAgent.SetDestination(target.position);
+        if (target)
+            enemyAgent.SetDestination(target.position);
+        else
+            enemyAgent.ResetPath();
+
     }
 
     public override void GetInput()
