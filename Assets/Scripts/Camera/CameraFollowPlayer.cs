@@ -12,13 +12,21 @@ public class CameraFollowPlayer : MonoBehaviour
     [Header("Player")]
     public Transform player;
 
+    [Header("Scene Changer")]
+    public ChangeSceneOnTrigger changeSceneOnTrigger;
+
     private Vector3 lastPlayerPosition;
+    private bool nextSceneInvoked;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start() => lastPlayerPosition = player.position;
+    void Start()
+    {
+        lastPlayerPosition = player.position;
+        nextSceneInvoked = false;
+    }
 
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -43,6 +51,7 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void MoveToTarget()
     {
+        // Player is NULL only when destroyed
         Vector3 targetVector = lastPlayerPosition;
         Vector3 forwardVector = Vector3.forward;
         Vector3 rightVector = Vector3.right;
@@ -54,6 +63,12 @@ public class CameraFollowPlayer : MonoBehaviour
             forwardVector = player.forward;
             rightVector = player.right;
             upVector = player.up;
+        }
+
+        if (player == null && !nextSceneInvoked)
+        {
+            nextSceneInvoked = true;
+            changeSceneOnTrigger.ChangeSceneInvoke();
         }
 
         Vector3 targetPosition = targetVector +

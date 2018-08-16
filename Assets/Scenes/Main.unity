@@ -5005,7 +5005,7 @@ MonoBehaviour:
   playerTransform: {fileID: 246829866}
   maxAudioPitch: 1.5
   minAudioPitch: 1
-  pitchLerpRatio: 0.5
+  pitchLerpRatio: 0.4
   minDistanceToPlayer: 5
   maxDistanceToPlayer: 15
   maxVehiclesToConsider: 7
@@ -10812,6 +10812,47 @@ MonoBehaviour:
   heightAbovePlayerToSpawn: 10
   meteor: {fileID: 1660512661259752, guid: 8e095e60371a6014a80e3148c05b6b89, type: 2}
   playerTransform: {fileID: 246829866}
+--- !u!1 &1281081312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281081314}
+  - component: {fileID: 1281081313}
+  m_Layer: 0
+  m_Name: Scene End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1281081313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281081312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9737f877b5ca3814a9660b818f03d057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeSceneAfterTime: 2
+--- !u!4 &1281081314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281081312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 273.20905, y: 82.650505, z: 103.58369}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1283798312
 GameObject:
   m_ObjectHideFlags: 0
@@ -13793,11 +13834,21 @@ Prefab:
       propertyPath: bustedSliderHolder
       value: 
       objectReference: {fileID: 1518582444}
+    - target: {fileID: 114200134687920330, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: changeSceneOnTrigger
+      value: 
+      objectReference: {fileID: 1281081313}
     - target: {fileID: 114907679073615138, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
       propertyPath: policeHolder
       value: 
       objectReference: {fileID: 1433037469}
+    - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
+        type: 2}
+      propertyPath: directionArrow
+      value: 
+      objectReference: {fileID: 1950474131}
     - target: {fileID: 114095643066453664, guid: f292d4b8f104a7d4a8ee044cfd86d29a,
         type: 2}
       propertyPath: healthSlider
@@ -16931,6 +16982,7 @@ MonoBehaviour:
   lookSpeed: 10
   cameraOffset: {x: 0, y: 4, z: -5}
   player: {fileID: 246829866}
+  changeSceneOnTrigger: {fileID: 1281081313}
 --- !u!4 &1899505880
 Transform:
   m_ObjectHideFlags: 0

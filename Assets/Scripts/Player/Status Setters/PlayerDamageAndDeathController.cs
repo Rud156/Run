@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerDamageAndDeathController : BaseDamageAndDeathController
 {
+    public GameObject directionArrow;
+
     [Header("Health Display")]
     public Color minHealthColor = Color.red;
     public Color halfHealthColor = Color.yellow;
@@ -36,8 +38,8 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
     void Update()
     {
         base.UpdateHealth();
-        base.CheckHealthZero();
 
+        CheckHealthZero();
         UpdateHealthToUI();
     }
 
@@ -56,6 +58,15 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
             PlayAudio(other);
             yield return new WaitForSeconds(waitTimeBetweenSwitching);
             vehicleBody.material = originalMaterial;
+        }
+    }
+
+    private new void CheckHealthZero()
+    {
+        if (base.currentCarHealth <= 0)
+        {
+            Destroy(directionArrow);
+            base.CheckHealthZero();
         }
     }
 

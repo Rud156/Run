@@ -15,9 +15,15 @@ public class PlayerCheckBoxedIn : MonoBehaviour
     public Animator bustedTextHolder;
     public Slider bustedSlider;
     public GameObject bustedSliderHolder;
+    public ChangeSceneOnTrigger changeSceneOnTrigger;
 
     private Rigidbody playerRB;
     private float bustedAmount;
+
+    private PlayerCarController playerCarController;
+    private TargetClosestPolice targetClosestPolice;
+
+    private bool bustedSet;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -26,7 +32,11 @@ public class PlayerCheckBoxedIn : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerCarController = GetComponent<PlayerCarController>();
+        targetClosestPolice = GetComponent<TargetClosestPolice>();
+
         bustedAmount = 0;
+        bustedSet = false;
     }
 
     /// <summary>
@@ -35,6 +45,9 @@ public class PlayerCheckBoxedIn : MonoBehaviour
     /// </summary>
     void LateUpdate()
     {
+        if (bustedSet)
+            return;
+
         CheckBusted();
         UpdateBustedUI();
     }
@@ -57,7 +70,15 @@ public class PlayerCheckBoxedIn : MonoBehaviour
         bustedAmount = bustedAmount < 0 ? 0 : bustedAmount;
 
         if (bustedAmount >= maxBustedAmount)
+        {
             bustedTextHolder.SetTrigger(AnimatorVariables.FadeIn);
+
+            targetClosestPolice.StopShooting();
+            playerCarController.disableDefaultControl = true;
+
+            bustedSet = true;
+            changeSceneOnTrigger.ChangeSceneInvoke(true);
+        }
     }
 
     private void UpdateBustedUI()

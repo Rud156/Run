@@ -2521,6 +2521,7 @@ MonoBehaviour:
   roughness: 5
   fadeInTime: 0.15
   fadeOutTime: 0.15
+  directionArrow: {fileID: 0}
   minHealthColor: {r: 1, g: 0, b: 0, a: 1}
   halfHealthColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
@@ -2552,6 +2553,7 @@ MonoBehaviour:
   bustedTextHolder: {fileID: 0}
   bustedSlider: {fileID: 0}
   bustedSliderHolder: {fileID: 0}
+  changeSceneOnTrigger: {fileID: 0}
 --- !u!114 &114433486089770638
 MonoBehaviour:
   m_ObjectHideFlags: 1
