@@ -65,8 +65,6 @@ public class PlayerDamageAndDeathController : BaseDamageAndDeathController
         float damagePitch = ((other.relativeVelocity.magnitude / maxDamage) * maxAudioPitch) +
             minAudioPitch;
 
-        print(damagePitch);
-
         vehicleDamage.pitch = damagePitch;
         vehicleDamage.Play();
     }

@@ -16,6 +16,15 @@ public class PlayerCarController : BaseCarController
     private float horizontalInput;
     private float verticalInput;
 
+    [HideInInspector]
+    public bool disableDefaultControl;
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start() => disableDefaultControl = true;
+
     /// <summary>
     /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
     /// </summary>
@@ -23,8 +32,11 @@ public class PlayerCarController : BaseCarController
     {
         GetInput();
 
-        base.Steer(horizontalInput);
-        base.Accelerate(verticalInput);
+        if (!disableDefaultControl)
+        {
+            base.Steer(horizontalInput);
+            base.Accelerate(verticalInput);
+        }
 
         base.UpdateWheelPoses();
 

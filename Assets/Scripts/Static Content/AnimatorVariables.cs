@@ -10,4 +10,7 @@ public class AnimatorVariables
 
     // Reward Text
     public const string DisplayText = "DisplayText";
+
+    // Scene Start Text
+    public const string DisplaySceneStartText = "DisplaySceneStartText";
 }
