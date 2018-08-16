@@ -5003,7 +5003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   policeHolderTransform: {fileID: 1433037470}
   playerTransform: {fileID: 246829866}
-  maxAudioPitch: 2.5
+  maxAudioPitch: 1.5
   minAudioPitch: 1
   minDistanceToPlayer: 5
   maxDistanceToPlayer: 15
