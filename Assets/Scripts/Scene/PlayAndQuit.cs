@@ -18,7 +18,7 @@ public class PlayAndQuit : MonoBehaviour
         if (PlayerPrefs.HasKey(PlayerPrefsVariables.PlayerScore))
             currentScore = PlayerPrefs.GetFloat(PlayerPrefsVariables.PlayerScore);
 
-        scoreText.text = ExtensionFunctions.Format2DecimalPlace(currentScore);
+        scoreText.text = $"Points: {ExtensionFunctions.Format2DecimalPlace(currentScore)}";
     }
 
     public void PlayGame()
