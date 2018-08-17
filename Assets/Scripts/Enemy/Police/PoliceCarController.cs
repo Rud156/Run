@@ -18,8 +18,12 @@ public class PoliceCarController : BaseCarController
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
     /// </summary>
-    void Start() =>
-        target = GameObject.FindGameObjectWithTag(TagManager.Player).transform;
+    void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag(TagManager.Player);
+        if (player != null)
+            target = player.transform;
+    }
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.

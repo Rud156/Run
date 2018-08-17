@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  rotationSpeed: 5
+  rotationSpeed: 3
 --- !u!1001 &378362680
 Prefab:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.4}
+  m_AnchoredPosition: {x: 0, y: -31.400024}
   m_SizeDelta: {x: 0, y: 62.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &626006040
@@ -882,6 +882,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540788521473768, guid: c964729d225b5204caeb9632eb750b62,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540788521473768, guid: c964729d225b5204caeb9632eb750b62,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0.5882353
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c964729d225b5204caeb9632eb750b62, type: 2}

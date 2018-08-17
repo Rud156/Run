@@ -58,8 +58,6 @@ public class PauseAndResume : MonoBehaviour
         NextSceneData.nextSceneIndex = 1;
         NextSceneData.makeInfoTextVisible = false;
         Time.timeScale = 1;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
 
         SceneManager.LoadScene(2);
     }

@@ -22,12 +22,20 @@ public class ChangeSceneOnStart : MonoBehaviour
             infoText.GetComponent<Text>().text = NextSceneData.playerBusted ?
                 "You were BUSTED !!!" : "You were Destroyed !!!";
         }
+        else
+        {
+            infoText.SetActive(false);
+            infoText.GetComponent<Text>().text = "";
+        }
 
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(LoadNextSceneAsync());
     }
 
     IEnumerator LoadNextSceneAsync()
     {
+        loadingSlider.value = 0;
         yield return new WaitForSeconds(bufferTime);
 
         int sceneIndex = NextSceneData.nextSceneIndex;
