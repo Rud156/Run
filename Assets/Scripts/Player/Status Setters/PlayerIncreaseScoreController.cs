@@ -43,7 +43,7 @@ public class PlayerIncreaseScoreController : MonoBehaviour
             return;
 
         currentScore += (scoreIncreaseRate * Time.deltaTime);
-        uiScoreText.text = $"Points: {ExtensionFunctions.Format2DecimalPlace(currentScore)}";
+        uiScoreText.text = $"Score: {ExtensionFunctions.Format2DecimalPlace(currentScore)}";
     }
 
     public void GenerateRandomScore(Vector3 position)
