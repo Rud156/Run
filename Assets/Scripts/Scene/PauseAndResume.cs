@@ -55,7 +55,7 @@ public class PauseAndResume : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        NextSceneData.nextSceneIndex = 1;
+        NextSceneData.nextSceneIndex = 0;
         NextSceneData.makeInfoTextVisible = false;
         Time.timeScale = 1;
 

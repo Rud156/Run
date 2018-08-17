@@ -18,7 +18,7 @@ public class ChangeSceneOnTrigger : MonoBehaviour
 
         NextSceneData.playerBusted = busted;
         NextSceneData.makeInfoTextVisible = true;
-        NextSceneData.nextSceneIndex = 1;
+        NextSceneData.nextSceneIndex = 0;
         Invoke("ChangeScene", changeSceneAfterTime);
     }
 
