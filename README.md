@@ -1,5 +1,7 @@
 # Run
-A simple game where you try to escape the law for as long as possible while going to checkpoints. Inspired by the game **PAKO 2**
+A simple game where you try to escape the law for as long as possible while going to checkpoints. 
+<br />
+Inspired by the game **PAKO 2**
 
 ### Controls:
 - WASD or Arrow Keys to Move
