@@ -24,6 +24,7 @@ public class PlayAndQuit : MonoBehaviour
     public void PlayGame()
     {
         NextSceneData.nextSceneIndex = 0;
+        NextSceneData.makeInfoTextVisible = false;
         SceneManager.LoadScene(2);
     }
 

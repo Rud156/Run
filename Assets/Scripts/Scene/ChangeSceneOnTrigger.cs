@@ -17,7 +17,7 @@ public class ChangeSceneOnTrigger : MonoBehaviour
             PlayerPrefs.SetFloat(PlayerPrefsVariables.PlayerScore, currentScore);
 
         NextSceneData.playerBusted = busted;
-        NextSceneData.makeInfoTextVisible = false;
+        NextSceneData.makeInfoTextVisible = true;
         Invoke("ChangeScene", changeSceneAfterTime);
     }
 
