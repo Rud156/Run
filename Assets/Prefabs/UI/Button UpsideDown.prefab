@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222692037851710252}
   - component: {fileID: 114332097954542984}
   - component: {fileID: 114195610112179596}
+  - component: {fileID: 114854230729403844}
   m_Layer: 5
   m_Name: Button UpsideDown
   m_TagString: Untagged
@@ -147,6 +148,25 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114854230729403844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1830860966219964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!222 &222612155913028770
 CanvasRenderer:
   m_ObjectHideFlags: 1
