@@ -8,7 +8,7 @@ Inspired by the game **PAKO 2**
 
 ### Download Link: https://rud156.itch.io/run
 
-### Screen Shots:
+### Screenshots:
 ![Main Screen](./Screenshots/Shot_1.png)
 ![Game World](./Screenshots/Shot_2.png)
 ![Ramps](./Screenshots/Shot_3.png)
