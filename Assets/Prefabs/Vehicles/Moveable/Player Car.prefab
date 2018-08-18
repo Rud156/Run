@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 114095643066453664}
   - component: {fileID: 114200134687920330}
   - component: {fileID: 114900195923227834}
+  - component: {fileID: 114917787670704000}
   m_Layer: 0
   m_Name: Player Car
   m_TagString: Player
@@ -2469,6 +2470,18 @@ MonoBehaviour:
   waitBetweenShots: 0.7
   minDistanceBeforeShooting: 10
   shotEffect: {fileID: 1824584541499862, guid: 0ca05ef5acca9a24c910817b3117b382, type: 2}
+--- !u!114 &114917787670704000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134635471718232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cd8c879fe5ccf4aa122b2b1b6e0d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 5
 --- !u!146 &146338754761560274
 WheelCollider:
   m_ObjectHideFlags: 1
