@@ -5140,7 +5140,7 @@ MonoBehaviour:
   minAudioPitch: 1
   pitchLerpRatio: 0.4
   minDistanceToPlayer: 5
-  maxDistanceToPlayer: 15
+  maxDistanceToPlayer: 20
   maxVehiclesToConsider: 7
 --- !u!1 &550054381
 GameObject:

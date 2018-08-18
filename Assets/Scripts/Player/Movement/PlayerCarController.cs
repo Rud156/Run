@@ -62,21 +62,21 @@ public class PlayerCarController : BaseCarController
             UpdateTrail(frontLTrail, frontLWheelCollider, true);
 
         // Front Right Wheel
-        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        result = frontRWheelCollider.GetGroundHit(out wheelHit);
         if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
             UpdateTrail(frontRTrail, frontRWheelCollider);
         else
             UpdateTrail(frontRTrail, frontRWheelCollider, true);
 
         // Rear Left Wheel
-        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        result = rearLWheelCollider.GetGroundHit(out wheelHit);
         if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
             UpdateTrail(rearLTrail, rearLWheelCollider);
         else
             UpdateTrail(rearLTrail, rearLWheelCollider, true);
 
         // Rear Right Wheel
-        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        result = rearRWheelCollider.GetGroundHit(out wheelHit);
         if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
             UpdateTrail(rearRTrail, rearRWheelCollider);
         else
