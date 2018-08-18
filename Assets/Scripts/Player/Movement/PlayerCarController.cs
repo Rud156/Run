@@ -51,17 +51,43 @@ public class PlayerCarController : BaseCarController
 
     private void UpdateTrails()
     {
-        DisplayTrail(frontLTrail, frontLWheelCollider);
-        DisplayTrail(frontRTrail, frontRWheelCollider);
-        DisplayTrail(rearLTrail, rearLWheelCollider);
-        DisplayTrail(rearRTrail, rearRWheelCollider);
+        WheelHit wheelHit;
+        bool result;
+
+        //  Front Left Wheel
+        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
+            UpdateTrail(frontLTrail, frontLWheelCollider);
+        else
+            UpdateTrail(frontLTrail, frontLWheelCollider, true);
+
+        // Front Right Wheel
+        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
+            UpdateTrail(frontRTrail, frontRWheelCollider);
+        else
+            UpdateTrail(frontRTrail, frontRWheelCollider, true);
+
+        // Rear Left Wheel
+        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
+            UpdateTrail(rearLTrail, rearLWheelCollider);
+        else
+            UpdateTrail(rearLTrail, rearLWheelCollider, true);
+
+        // Rear Right Wheel
+        result = frontLWheelCollider.GetGroundHit(out wheelHit);
+        if (result && wheelHit.collider.CompareTag(TagManager.Terrain))
+            UpdateTrail(rearRTrail, rearRWheelCollider);
+        else
+            UpdateTrail(rearRTrail, rearRWheelCollider, true);
     }
 
-    private void DisplayTrail(ParticleSystem trail, WheelCollider collider)
+    private void UpdateTrail(ParticleSystem trail, WheelCollider collider, bool forceStop = false)
     {
         ParticleSystem.EmissionModule emission = trail.emission;
 
-        if (collider.isGrounded)
+        if (collider.isGrounded && !forceStop)
             emission.rateOverTime = Mathf.FloorToInt(verticalInput * maxParticlesToSpawn);
         else
             emission.rateOverTime = 0;

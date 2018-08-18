@@ -7877,6 +7877,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114209384153132486, guid: ba8dad453f77deb48996f9cfcf473c25,
+        type: 2}
+      propertyPath: stuckUnstuckController
+      value: 
+      objectReference: {fileID: 1902613771}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba8dad453f77deb48996f9cfcf473c25, type: 2}
   m_IsPrefabAsset: 0
@@ -9252,6 +9257,11 @@ Prefab:
       propertyPath: m_Name
       value: Garage (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114209384153132486, guid: ba8dad453f77deb48996f9cfcf473c25,
+        type: 2}
+      propertyPath: stuckUnstuckController
+      value: 
+      objectReference: {fileID: 1902613771}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba8dad453f77deb48996f9cfcf473c25, type: 2}
   m_IsPrefabAsset: 0
@@ -17653,7 +17663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 3
-  lookSpeed: 10
+  lookSpeed: 20
   cameraOffset: {x: 0, y: 4, z: -5}
   player: {fileID: 246829866}
 --- !u!4 &1899505880
