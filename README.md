@@ -1,5 +1,5 @@
 # Run
-A simple game where you try to escape the law for as long as possible while going to checkpoints. 
+A simple game where you try to escape the law for as long as possible while going to checkpoints. The police will try to box you in and destroy you at all costs. Avoid them for as long as possible to get a higher score.
 <br />
 Inspired by the game **PAKO 2**
 
